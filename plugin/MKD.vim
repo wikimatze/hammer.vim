@@ -56,9 +56,10 @@ ruby << EOF
     File.open(html_file, 'w') do |f|
       f.write(layout)
     end
+    system("open #{html_file}; sleep 2; rm #{html_file}")
   end
   
-  system("open #{html_file}; sleep 2; rm #{html_file}")
+  
 EOF
 endfunction
 
