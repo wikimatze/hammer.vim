@@ -33,4 +33,7 @@ is already loaded in an existing tab/window.
 
 _vim-markdown-preview_ is tied to the OSX command `open`.  
 You will need to replace it with something else - firefox-bin, for example, for it to work 
-on your operating system. 
+on your operating system.
+
+### Credit
+This is a modified version of the script I found [here](http://mathias-biilmann.net/2009/1/markdown-preview-in-vim)
