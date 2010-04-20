@@ -14,7 +14,7 @@ The web page it opens is loosely styled on how GitHub would render README.mkd.
 
 ### Usage
 
-In visual mode, type `:mm` for a preview of your markdown document.
+Type `:Mm` as a command for a preview of your markdown document.
 
 
 ### Dependencies

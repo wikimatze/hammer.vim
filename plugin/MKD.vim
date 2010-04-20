@@ -63,5 +63,5 @@ ruby << EOF
 EOF
 endfunction
 
-map :mm :call PreviewMKD()<CR>
+:command Mm :call PreviewMKD()<CR>
 
