@@ -58,7 +58,7 @@ ruby << EOF
     end
   end
   
-  system("open #{html_file}")
+  system("open #{html_file}; sleep 2; rm #{html_file}")
 EOF
 endfunction
 
