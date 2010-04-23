@@ -33,6 +33,13 @@ ruby << EOF
     border-color     : #000;
     background-color : #F8F8FF;
   }
+
+  body h4#title {
+    font-family : verdana, sans-serif;
+    display     : block;
+    margin      : 0 auto;
+    width       : 800px;
+  }
   </style> 
   STYLE
 
@@ -42,6 +49,11 @@ ruby << EOF
     #{style}
     </head>
     <body>
+      
+      <h4 id="title">
+        #{File.basename(VIM::Buffer.current.name)}
+      </h4>
+
       <div id="content">
         #{BlueCloth.new(t).to_html}
       </div>
@@ -63,5 +75,5 @@ ruby << EOF
 EOF
 endfunction
 
-:command Mm :call PreviewMKD()<CR>
+:command! Mm :call PreviewMKD()<CR>
 
