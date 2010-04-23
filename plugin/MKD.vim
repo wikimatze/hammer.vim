@@ -55,6 +55,8 @@ ruby << EOF
   <html>
     <head>
     #{style}
+
+    <title> #{File.basename(VIM::Buffer.current.name)} </title>
     </head>
     <body>
       
