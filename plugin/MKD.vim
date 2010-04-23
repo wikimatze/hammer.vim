@@ -20,18 +20,26 @@ ruby << EOF
     font-family       : verdana, sans-serif; 
   }
 
-  body div#content code {
-    font-family      : courier, fixed;
-    display          : inline;
-    background-color : #F8F8FF;
-  }
-
   body div#content pre {
     padding          : 5px;
     border-style     : solid;
     border-width     : 1px;
     border-color     : #000;
     background-color : #F8F8FF;
+  }
+
+  body div#content pre code {
+    padding          : 5px;
+    background-color : #F8F8FF;
+    border           : none;
+  }
+
+  body div#content code {
+    font-family      : courier, fixed;
+    display          : inline-block;
+    padding          : 0px 2px 0px 2px;
+    background-color : #F8F8FF;
+    border           : 1px #000 solid;
   }
 
   body h4#title {
