@@ -20,6 +20,11 @@ ruby << EOF
     font-family       : verdana, sans-serif; 
   }
 
+  body div#content h1, body div#content h2 {
+   padding-top  : 10px;
+   border-top   : 4px solid #E0E0E0;
+  }
+
   body div#content pre {
     padding          : 5px;
     border-style     : solid;
