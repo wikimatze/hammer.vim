@@ -13,7 +13,7 @@ ruby << EOF
   <style>
   body div#content { 
     margin            : 0 auto;
-    width             : 800px;
+    width             : 920px;
     background-color  : #f8f8f8;
     padding           : .7em;
     font-size         : 13.34px;
@@ -51,7 +51,7 @@ ruby << EOF
     font-family : verdana, sans-serif;
     display     : block;
     margin      : 0 auto;
-    width       : 800px;
+    width       : 920px;
   }
   </style> 
   STYLE
