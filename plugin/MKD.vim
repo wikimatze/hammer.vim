@@ -17,7 +17,8 @@ ruby << EOF
     background-color  : #f8f8f8;
     padding           : .7em;
     font-size         : 13.34px;
-    font-family       : verdana, sans-serif; 
+    font-family       : verdana, sans-serif;
+    border            : 1px #E0E0E0 solid; 
   }
 
   body div#content h1, body div#content h2 {
@@ -29,7 +30,7 @@ ruby << EOF
     padding          : 5px;
     border-style     : solid;
     border-width     : 1px;
-    border-color     : #000;
+    border-color     : #E0E0E0;
     background-color : #F8F8FF;
   }
 
@@ -44,7 +45,7 @@ ruby << EOF
     display          : inline-block;
     padding          : 0px 2px 0px 2px;
     background-color : #F8F8FF;
-    border           : 1px #000 solid;
+    border           : 1px #E0E0E0 solid;
   }
 
   body h4#title {
