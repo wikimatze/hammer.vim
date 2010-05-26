@@ -6,7 +6,7 @@ ruby << EOF
 
   t = ""
   VIM::Buffer.current.count.times {|i| t += "#{VIM::Buffer.current[i + 1]}\n"}
-  html_file = VIM::Buffer.current.name.gsub(/.(md|mkd)$/, '.html')
+  html_file = VIM::Buffer.current.name.gsub(/.(md|mkd|markdown)$/, '.html')
 
 
   style = <<-STYLE
