@@ -14,7 +14,9 @@ The web page it opens is loosely styled on how GitHub would render README.mkd.
 
 ## Usage
 
-Type `:Mm` as a command for a preview of your markdown document.
+Send vim the command `:Mm` for a preview of your markdown document.  
+Alternatively, bind `:Mm` to a key binding: 
+`map <leader>p :Mm<CR>` 
 
 
 ## Dependencies
@@ -36,7 +38,18 @@ You will need to replace it with something else - firefox-bin, for example, for 
 on your operating system.
 
 ## Credit
-This is a modified version of the script I found [here](http://mathias-biilmann.net/2009/1/markdown-preview-in-vim)
+
+* Mathias Billman  
+  This is a heavily modified version of the vim script originally written by
+  Mathias Billman and found 
+  [here](http://mathias-biilmann.net/2009/1/markdown-preview-in-vim).
+
+* [moreweb](http://github.com/moreweb)  
+  Contributor.  
+
+* [maba](http://github.com/maba)  
+  Contributor. 
+
 
 ## Bugs
 
