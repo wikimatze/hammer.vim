@@ -1,7 +1,7 @@
 ## vim-markdown-preview
 
-_vim-markdown-preview_ adds the option to preview markdown documents in the browser from the 
-vim editor.  
+_vim-markdown-preview_ adds the option to preview markdown documents in the 
+browser from the vim editor.  
 The web page it opens is loosely styled on how GitHub would render README.mkd.
 
 ## Install
@@ -27,15 +27,16 @@ Alternatively, bind `:Mm` to a key binding:
 
 ## OSX
 
-_vim-markdown-preview_ was written to run on OSX, and it will work w/o problems.  
-I recommend the safari browser because it will not open new tabs needlessly if a document
-is already loaded in an existing tab/window.
+_vim-markdown-preview_ was written to run on OSX, and it will work w/o 
+problems.  
+I recommend the safari browser because it will not open new tabs needlessly 
+if a document is already loaded in an existing tab/window.
 
 ## Linux/Others
 
 _vim-markdown-preview_ is tied to the OSX command `open`.  
-You will need to replace it with something else - firefox-bin, for example, for it to work 
-on your operating system.
+You will need to replace it with something else - firefox-bin, for example, 
+for it to work on your operating system.
 
 ## Credit
 
@@ -53,7 +54,8 @@ on your operating system.
 
 ## Bugs
 
-No known bugs right now. [Found a bug?](http://github.com/robgleeson/vim-markdown-preview/issues).
+No known bugs right now. 
+[Found a bug?](http://github.com/robgleeson/vim-markdown-preview/issues).
 
 ## Contact
 
