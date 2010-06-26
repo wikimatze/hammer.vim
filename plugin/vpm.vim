@@ -1,7 +1,7 @@
 function! PreviewMKD()
   ruby << RUBY
-    $LOAD_PATH.unshift(File.expand_path('vim-markdown-preview/', 
-                                         File.dirname(__FILE__)))
+    $LOAD_PATH.unshift(File.join(ENV['HOME'], '.vim', 'plugin',
+                       'vim-markdown-preview'))
 
     require('kramdown/kramdown')
 
