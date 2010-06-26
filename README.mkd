@@ -6,11 +6,7 @@ The web page it opens is loosely styled on how GitHub would render README.mkd.
 
 ## Install
 
-    mv plugin/MKD.vim $HOME/.vim/plugin
-    .. start (g|mac)vim
-
-    # if needed
-    gem install bluecloth
+    sh install.sh
 
 ## Usage
 
@@ -23,7 +19,7 @@ Alternatively, bind `:Mm` to a key binding:
 
 * vim
 * Ruby support for vim.
-* BlueCloth
+* kramdown (bundled with this package)
 
 ## OSX
 
@@ -41,7 +37,7 @@ for it to work on your operating system.
 ## Credit
 
 * Mathias Billman  
-  This is a heavily modified version of the vim script originally written by
+  This is an enitrely rewritten version of the vim script originally written by
   Mathias Billman and found 
   [here](http://mathias-biilmann.net/2009/1/markdown-preview-in-vim).
 
