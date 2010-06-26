@@ -85,9 +85,9 @@ function! PreviewMKD()
     unless File.extname(VIM::Buffer.current.name) =~ /.(md|mkd|markdown)/ 
       VIM.message('This file extension is not supported for Markdown previews')
     else
-      file = VIM::Buffer.current.name + '_' + Time.now.to_s
-      File.open('/tmp/%s' % [ file ], 'w') { |f| f.write(layout) }
-      VIM.command(":! google-chrome %s" % [ html_file ])
+      file = File.join('/tmp', File.basename(VIM::Buffer.current.name) + '.html')
+      File.open('%s' % [ file ], 'w') { |f| f.write(layout) }
+      VIM.command(":! google-chrome %s" % [ file ])
     end 
 RUBY
 endfunction
