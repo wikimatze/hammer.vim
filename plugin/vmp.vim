@@ -87,7 +87,7 @@ function! PreviewMKD()
     else
       file = File.join('/tmp', File.basename(VIM::Buffer.current.name) + '.html')
       File.open('%s' % [ file ], 'w') { |f| f.write(layout) }
-      VIM.command(":! google-chrome %s" % [ file ])
+      VIM.command(":! open %s" % [ file ])
     end 
 RUBY
 endfunction
