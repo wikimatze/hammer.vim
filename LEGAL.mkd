@@ -1,0 +1,34 @@
+## LEGAL
+**vim-markdown-preview**  
+vim-markdown-preview is released under the GPL v3.  
+The terms and conditions of this license are described below:   
+
+    
+    Copyright (C) 2009 Robert Gleeson <rob@flowof.info>
+
+    vim-markdown-preview is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This file(LEGAL.mkd) **must** be apart of any redistributable packages made
+from this software. No licenses(including the one pertaining to kramdown) should
+be removed from this software if you are making redistributable copies. 
+  
+**kramdown**  
+  The kramdown library is used for converting a markdown document into a
+  HTML document, and it is bundled with this software.  
+  Thanks to `Thomas Leitner`, the author of the kramdown library.  
+
+  (The GPLv3 license for kramdown can be found at 
+  "./plugin/vim-markdown-preview/kramdown/COPYING" 
+   from the root of this project)
+
