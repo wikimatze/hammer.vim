@@ -4,8 +4,7 @@ function! PreviewMKD()
     VIM.evaluate('&runtimepath').split(',').each do |path|
       $LOAD_PATH.unshift(File.join(path, 'plugin', 'vim-markdown-preview'))
     end
-
-    print $LOAD_PATH.inspect
+  
     require('kramdown/kramdown')
 
     text = Array.new(VIM::Buffer.current.count) do |i| 
