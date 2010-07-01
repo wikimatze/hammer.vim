@@ -6,6 +6,20 @@ The web page it opens is loosely styled on how GitHub would render README.mkd.
 
 ## Install
 
+**Download**  
+
+* Option 1  
+  Cloning this repository is one option, and the master branch should always be 
+  in a working state.
+   
+* Option 2  
+  You can download versioned releases from the 
+  [downloads](http://github.com/robgleeson/vim-markdown-preview/downloads) page.
+
+**Automatic installation**  
+vim-markdown-preview is bundled with an installer script which will install to 
+$HOME/.vim/plugin/
+
     sh install.sh
 
 ## Usage
