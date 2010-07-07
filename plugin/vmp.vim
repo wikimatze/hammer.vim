@@ -23,7 +23,7 @@ function! PreviewMKD()
       border            : 1px #E0E0E0 solid;
     }
 
-    body div#content h1, body div#content h2 {
+    body div#content h2, body div#content h3, body div#content h4 {
      padding-top  : 10px;
      border-top   : 4px solid #E0E0E0;
     }
