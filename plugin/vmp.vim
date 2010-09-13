@@ -11,6 +11,8 @@ function! PreviewMKD()
       VIM::Buffer.current[i + 1]
     end.join("\n")
 
+    VIM::Buffer.current.name.nil? ? (name = 'No Name.md') : (name = Vim::Buffer.current.name)
+
     style = <<-STYLE
     <style type="text/css">
     body div#content {
@@ -68,12 +70,12 @@ function! PreviewMKD()
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       #{style}
 
-      <title> #{File.basename(VIM::Buffer.current.name)} </title>
+      <title> #{File.basename(name)} </title>
       </head>
       <body>
 
         <h4 id="title">
-          #{File.basename(VIM::Buffer.current.name)}
+          #{File.basename(name)}
         </h4>
 
         <div id="content">
@@ -84,10 +86,10 @@ function! PreviewMKD()
     LAYOUT
 
 
-    unless File.extname(VIM::Buffer.current.name) =~ /.(md|mkd|markdown)/
+    unless File.extname(name) =~ /\.(md|mkd|markdown)/
       VIM.message('This file extension is not supported for Markdown previews')
     else
-      file = File.join('/tmp', File.basename(VIM::Buffer.current.name) + '.html')
+      file = File.join('/tmp', File.basename(name) + '.html')
       File.open('%s' % [ file ], 'w') { |f| f.write(layout) }
       Vim.command("silent !open '%s'" % [ file ])
     end
