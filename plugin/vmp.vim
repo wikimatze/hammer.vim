@@ -15,7 +15,8 @@ function! PreviewMKD()
     VIM::Buffer.current.name.nil? ? (name = 'No Name.md') : (name = Vim::Buffer.current.name)
 
     preview_path = VIM.evaluate('&runtimepath').split(',').select{|path| path =~ /vim-markdown-preview/}.first
-    cssfile = File.open("#{preview_path}/plugin/markdown-preview.css")
+    "cssfile = File.open("#{preview_path}/plugin/markdown-preview.css")
+    cssfile = File.open("#{preview_path}/stylesheets/safari-reader.css")
     style = cssfile.read
 
     layout = <<-LAYOUT
@@ -33,12 +34,12 @@ function! PreviewMKD()
       </head>
       <body>
 
-        <h4 id="title">
-          #{File.basename(name)}
-        </h4>
-
-        <div id="content">
+        <div id="container">
+        <div id="centered">
+        <div id="article">
           #{Kramdown::Document.new(text).to_html}
+        </div>
+        </div>
         </div>
       </body>
     </html>

@@ -1,0 +1,13 @@
+[_] styles
+	[_] emulate Safari Reader
+	[_] move stylesheet from 'plugin' to 'stylesheets'
+[_] filetype plugin
+	[_] rename 'plugin' to 'ftplugin'
+	[_] no need for "This is not a markdown file" message
+[_] generate HTML file
+[_] options
+	[_] markdown parser
+	: Kramdown default/fallback, but allow user to specify an existing markdown converter
+	[_] webbrowser
+	: e.g. open / safari / firefox
+	[_] styled document Vs bare
