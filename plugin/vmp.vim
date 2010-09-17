@@ -37,7 +37,9 @@ function! PreviewMKD()
         <div id="container">
         <div id="centered">
         <div id="article">
+        <div class="page">
           #{Kramdown::Document.new(text).to_html}
+        </div>
         </div>
         </div>
         </div>

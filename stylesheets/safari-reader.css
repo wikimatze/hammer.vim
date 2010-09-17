@@ -1,3 +1,99 @@
+h1.title {
+    font-family: Palatino, Georgia, Times, "Times New Roman", serif;
+    font-weight: bold;
+    font-size: 1.33em;
+    line-height: 1.25em;
+}
+
+h1 {
+    font-size: 1.25em;
+}
+
+h2 {
+    font-size: 1.125em;
+}
+
+h3 {
+    font-size: 1.05em;
+}
+
+.page a {
+    text-decoration: none;
+    color: rgb(32, 0, 127);
+}
+
+.page a:visited {
+    color: rgb(32, 0, 127);
+}
+
+#article img {
+    /* Float images to the left, so that text will nicely flow around them. */
+    float: left;
+    margin-right: 12px;
+}
+
+#article img.reader-image-tiny {
+    /* Don't float very small images -- let them display where they occur in the text. */
+    float: none;
+    margin: 0;
+}
+
+#article img.reader-image-large {
+    float: none;
+    margin: auto;
+    display: block;
+}
+
+.float {
+    margin: 8px 0;
+    font-size: 65%;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.float.left {
+    float: left;
+    margin-right: 20px;
+}
+
+.float.right {
+    float: right;
+    margin-left: 20px;
+}
+
+.float.full-width {
+    float: none;
+    display: block;
+}
+
+.page {
+    font: 20px Palatino, Georgia, Times, "Times New Roman", serif;
+    line-height: 160%;
+    text-align: justify;
+}
+
+.page:first-of-type .title {
+    display: block;
+}
+
+.page table {
+    font-size: 0.9em;
+    text-align: left;
+}
+
+.page.rtl table {
+    text-align: right;
+}
+
+.page-number {
+    display: none;
+}
+
+.title {
+    display: none;
+}    
+
+/*=====*/
 body {
     margin: 0;
     padding: 0;
@@ -119,30 +215,6 @@ body {
     opacity: 0;
 }
         
-::-webkit-scrollbar {
-    width: 21px;
-}
-
-::-webkit-scrollbar:horizontal {
-    display: none;
-}
-        
-::-webkit-scrollbar-track {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    -webkit-border-image: url(safari-resource:/ReaderTrack.png) 21 0 21 0;
-    border-width: 21px 0;
-}
-
-::-webkit-scrollbar-track:disabled {
-    display: none;
-}
-
-::-webkit-scrollbar-thumb {
-    -webkit-border-image: url(safari-resource:/ReaderThumb.png) 19 0 19 0;
-    border-width: 19px 0;
-    min-height: 40px;
-}
 
 #hud {
     position: fixed;
