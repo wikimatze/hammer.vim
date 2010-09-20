@@ -1,6 +1,8 @@
-[_] styles
-	[_] emulate Safari Reader
-	[_] move stylesheet from 'plugin' to 'stylesheets'
+[X] styles
+	[_] include a separate print stylesheet
+	: at the moment, printed page is completely blank
+	[X] emulate Safari Reader
+	[X] move stylesheet from 'plugin' to 'stylesheets'
 [_] filetype plugin
 	[_] rename 'plugin' to 'ftplugin'
 	[_] no need for "This is not a markdown file" message
@@ -11,3 +13,6 @@
 	[_] webbrowser
 	: e.g. open / safari / firefox
 	[_] styled document Vs bare
+[_] anchors
+	[_] add #id to each heading
+	[_] when opening, jump to the closest #heading to cursor position

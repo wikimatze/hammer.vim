@@ -1,111 +1,128 @@
-h1.title {
+@media print {
+  /* print.css from blueprint CSS framework */
+  body {line-height:1.5;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;color:#000;background:none;font-size:10pt;}
+  .container {background:none;}
+  hr {background:#ccc;color:#ccc;width:100%;height:2px;margin:2em 0;padding:0;border:none;}
+  hr.space {background:#fff;color:#fff;visibility:hidden;}
+  h1, h2, h3, h4, h5, h6 {font-family:"Helvetica Neue", Arial, "Lucida Grande", sans-serif;}
+  code {font:.9em "Courier New", Monaco, Courier, monospace;}
+  a img {border:none;}
+  p img.top {margin-top:0;}
+  blockquote {margin:1.5em;padding:1em;font-style:italic;font-size:.9em;}
+  .small {font-size:.9em;}
+  .large {font-size:1.1em;}
+  .quiet {color:#999;}
+  .hide {display:none;}
+  a:link, a:visited {background:transparent;font-weight:700;text-decoration:underline;}
+  a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
+}
+@media screen {
+  h1.title {
     font-family: Palatino, Georgia, Times, "Times New Roman", serif;
     font-weight: bold;
     font-size: 1.33em;
     line-height: 1.25em;
-}
+  }
 
-h1 {
+  h1 {
     font-size: 1.25em;
-}
+  }
 
-h2 {
+  h2 {
     font-size: 1.125em;
-}
+  }
 
-h3 {
+  h3 {
     font-size: 1.05em;
-}
+  }
 
-.page a {
+  .page a {
     text-decoration: none;
     color: rgb(32, 0, 127);
-}
+  }
 
-.page a:visited {
+  .page a:visited {
     color: rgb(32, 0, 127);
-}
+  }
 
-#article img {
+  #article img {
     /* Float images to the left, so that text will nicely flow around them. */
     float: left;
     margin-right: 12px;
-}
+  }
 
-#article img.reader-image-tiny {
+  #article img.reader-image-tiny {
     /* Don't float very small images -- let them display where they occur in the text. */
     float: none;
     margin: 0;
-}
+  }
 
-#article img.reader-image-large {
+  #article img.reader-image-large {
     float: none;
     margin: auto;
     display: block;
-}
+  }
 
-.float {
+  .float {
     margin: 8px 0;
     font-size: 65%;
     line-height: 1.4;
     text-align: left;
-}
+  }
 
-.float.left {
+  .float.left {
     float: left;
     margin-right: 20px;
-}
+  }
 
-.float.right {
+  .float.right {
     float: right;
     margin-left: 20px;
-}
+  }
 
-.float.full-width {
+  .float.full-width {
     float: none;
     display: block;
-}
+  }
 
-.page {
+  .page {
     font: 20px Palatino, Georgia, Times, "Times New Roman", serif;
     line-height: 160%;
     text-align: justify;
-}
+  }
 
-.page:first-of-type .title {
+  .page:first-of-type .title {
     display: block;
-}
+  }
 
-.page table {
+  .page table {
     font-size: 0.9em;
     text-align: left;
-}
+  }
 
-.page.rtl table {
+  .page.rtl table {
     text-align: right;
-}
+  }
 
-.page-number {
+  .page-number {
     display: none;
-}
+  }
 
-.title {
+  .title {
     display: none;
-}    
-
-/*=====*/
-body {
+  }  
+  body {
     margin: 0;
     padding: 0;
     background-color: transparent;
     -webkit-user-select: none;
-}
+  }
 
-.cached embed, .cached applet, .cached object {
+  .cached embed, .cached applet, .cached object {
     display: none !important;
-}
+  }
 
-#background {
+  #background {
     background-color: rgba(0, 0, 0, 0.8);
     -webkit-transform: translateZ(0);
     position: fixed;
@@ -113,98 +130,98 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-}
+  }
 
-#container {
+  #container {
     margin-left: -431px;
     left: 50%;
     width: 862px;
     height: 100%;
     position: absolute;
     pointer-events: none;
-}
+  }
 
-#centered {
+  #centered {
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
-}
+  }
 
-.preloading #background {
+  .preloading #background {
     opacity: 0;
-}
+  }
 
-.preloading #centered {
+  .preloading #centered {
     -webkit-transform: translate3d(0, 100%, 0);
-}
+  }
 
-.activating #background {
+  .activating #background {
     -webkit-transition: opacity 0.40s ease-out;
     opacity: 1.0;
-}
+  }
 
-.activating #fade-top {
+  .activating #fade-top {
     -webkit-animation-name: fadeTopActivationFadeIn;
     -webkit-animation-duration: 0.40s;
     -webkit-animation-timing-function: ease-out;
-}
+  }
 
-.activating.skip-transition #fade-top {
+  .activating.skip-transition #fade-top {
     -webkit-animation: none !important;
-}
+  }
 
-@-webkit-keyframes fadeTopActivationFadeIn {
+  @-webkit-keyframes fadeTopActivationFadeIn {
     0% {
-        opacity: 0;
+      opacity: 0;
     }
     80% {
-        opacity: 0;
+      opacity: 0;
     }
     100% {
-        opacity: 1;            
+      opacity: 1;
     }
-}
-                
-.activating.skip-transition #background {
-    -webkit-transition: none !important;
-}
+  }
 
-.activating #centered {
+  .activating.skip-transition #background {
+    -webkit-transition: none !important;
+  }
+
+  .activating #centered {
     -webkit-transition: -webkit-transform 0.40s ease-out;
     -webkit-transform: translate3d(0, 0, 0);
-}
+  }
 
-.activating.skip-transition #centered {
+  .activating.skip-transition #centered {
     -webkit-transition: none !important;
-}
+  }
 
-.deactivating #background {
+  .deactivating #background {
     -webkit-transition: opacity 0.40s ease-in;
     opacity: 0;
-}
+  }
 
-.deactivating #fade-top {
+  .deactivating #fade-top {
     opacity: 0;
-}
+  }
 
-.deactivating #fade-bottom {
+  .deactivating #fade-bottom {
     -webkit-transition: opacity 0.40s ease-in;
     opacity: 0;
-}
+  }
 
-.deactivating #centered {
+  .deactivating #centered {
     -webkit-transition: -webkit-transform 0.40s ease-in;
     -webkit-transform: translate3d(0, 100%, 0);
-}
+  }
 
-.deactivating #hud {
+  .deactivating #hud {
     -webkit-transition: opacity 0.25s ease-in;
     opacity: 0 !important;
-}
+  }
 
-#drop-shadow {
+  #drop-shadow {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -213,10 +230,10 @@ body {
     border-width: 24px 24px;
     -webkit-border-image: url(safari-resource:/ReaderDropShadow.png) 24 24 24 24 stretch stretch;
     opacity: 0;
-}
-        
+  }
 
-#hud {
+
+  #hud {
     position: fixed;
     width: 314px;
     height: 72px;
@@ -230,9 +247,9 @@ body {
     -webkit-transition: opacity 0.75s;
     pointer-events: auto;
     zoom: reset;
-}
+  }
 
-#hud button {
+  #hud button {
     display: block;
     float: left;
     width: 48px;
@@ -240,57 +257,57 @@ body {
     padding: 0;
     border: none;
     margin: 12px 5px;
-}
+  }
 
-#hud button:first-of-type {
+  #hud button:first-of-type {
     margin-left: 12px;
-}
+  }
 
-#hud button:last-of-type {
-    margin-right: 12px;            
-}
+  #hud button:last-of-type {
+    margin-right: 12px;
+  }
 
-#hud-zoom-out {
+  #hud-zoom-out {
     background: url(safari-resource:/ReaderHUDZoomOutInactive.png) no-repeat;
-}
+  }
 
-#hud-zoom-out:active {
+  #hud-zoom-out:active {
     background: url(safari-resource:/ReaderHUDZoomOutActive.png) no-repeat;
-}
+  }
 
-#hud-zoom-in {
+  #hud-zoom-in {
     background: url(safari-resource:/ReaderHUDZoomInInactive.png) no-repeat;
-}
+  }
 
-#hud-zoom-in:active {
+  #hud-zoom-in:active {
     background: url(safari-resource:/ReaderHUDZoomInActive.png) no-repeat;
-}
+  }
 
-#hud-mail {
+  #hud-mail {
     background: url(safari-resource:/ReaderHUDMailContentsInactive.png) no-repeat;
-}
+  }
 
-#hud-mail:active {
+  #hud-mail:active {
     background: url(safari-resource:/ReaderHUDMailContentsActive.png) no-repeat;
-}
+  }
 
-#hud-print {
+  #hud-print {
     background: url(safari-resource:/ReaderHUDPrintInactive.png) no-repeat;
-}
+  }
 
-#hud-print:active {
+  #hud-print:active {
     background: url(safari-resource:/ReaderHUDPrintActive.png) no-repeat;
-}
+  }
 
-#hud-exit {
+  #hud-exit {
     background: url(safari-resource:/ReaderHUDCloseInactive.png) no-repeat;
-}
+  }
 
-#hud-exit:active {
+  #hud-exit:active {
     background: url(safari-resource:/ReaderHUDCloseActive.png) no-repeat;
-}
+  }
 
-#article {
+  #article {
     /* The width of 819px here includes 19px for the WebKit scrollbar's width. */
     /* The padding-right of 8px separates the scrollbar from the article itself. */
     position: absolute;
@@ -304,41 +321,41 @@ body {
     pointer-events: auto;
     -webkit-user-select: auto;
     -webkit-transform: translateZ(0);
-}
+  }
 
-.article-fade {
+  .article-fade {
     position: absolute;
     left: 34px;
     height: 36px;
     width: 800px;
     z-index: 10; 
-    pointer-events: none;           
-}
+    pointer-events: none;
+  }
 
-#fade-top {
+  #fade-top {
     top: 0;
     background: url(safari-resource:/ReaderFadeTop.png) repeat-x;
-}
+  }
 
-#fade-bottom {
+  #fade-bottom {
     bottom: 0;
     background: url(safari-resource:/ReaderFadeBottom.png) repeat-x;
-}
+  }
 
-#resize-indicator {
+  #resize-indicator {
     position: fixed;
     bottom: 0;
     right: 0;
     width: 12px;
     height: 12px;
     background: url(safari-resource:/TopSitesCornerResize.png);
-}
+  }
 
-.page:only-of-type .page-number {
+  .page:only-of-type .page-number {
     display: none;
-}
+  }
 
-.page-number {
+  .page-number {
     display: block;
     font: bold 11px Helvetica, sans-serif;
     margin-left: 12px;
@@ -347,17 +364,17 @@ body {
     right: 10px;
     top: 10px;
     -webkit-user-select: none;
-}
+  }
 
-.page:first-of-type {
+  .page:first-of-type {
     margin-top: 22px;
-}
+  }
 
-.page:last-of-type {
+  .page:last-of-type {
     margin-bottom: 22px;
-}
+  }
 
-.page {
+  .page {
     width: 658px;
     margin-left: auto;
     margin-right: auto;
@@ -369,44 +386,45 @@ body {
     position: relative;
     overflow: hidden;
     -webkit-transition: height .5s ease-out;
-}
+  }
 
-.page.rtl {
+  .page.rtl {
     direction: rtl;
-}
+  }
 
-#incoming-page-placeholder {
+  #incoming-page-placeholder {
     height: 30px;
     margin-bottom: 0;
-}
+  }
 
-#incoming-page-corner {
+  #incoming-page-corner {
     position: absolute;
     right: 10px;
     top: 8px;
-}
+  }
 
-#incoming-page-spinner {
+  #incoming-page-spinner {
     width: 16px;
     height: 16px;
     float: right;
     background: url(safari-resource:/ReaderSpinner.png);
-}
+  }
 
-#incoming-page-text {
+  #incoming-page-text {
     float: right;
     margin-top: 2px;
     margin-left: 8px;
     color: #B2B2B2;
     font: bold 11px Helvetica, sans-serif;
     -webkit-user-select: none;
-}
-                
-#next-page-container {
+  }
+
+  #next-page-container {
     position:absolute;
     display: none;
-}
+  }
 
-.no-transition {
+  .no-transition {
     -webkit-transition: none !important;
+  }
 }
