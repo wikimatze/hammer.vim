@@ -53,7 +53,12 @@ function! PreviewMKD()
     else
       file = File.join('/tmp', File.basename(name) + '.html')
       File.open('%s' % [ file ], 'w') { |f| f.write(layout) }
-      Vim.command("silent !open '%s'" % [ file ])
+      # Open the html file
+      # Vim.command("silent !open '%s'" % [ file ])
+      # Create and open a PDF file
+      pdffile = File.join('/tmp', File.basename(name) + '.pdf')
+      system("wkpdf --source #{file} --output #{pdffile}")
+      Vim.command("silent !open '%s'" % [ pdffile ])
     end
 RUBY
 endfunction
