@@ -36,6 +36,9 @@
   code {
     font:.9em "Courier New", Monaco, Courier, monospace;
   }
+  pre {
+    line-height:0.8;
+  }
   a img {
     border:none;
   }
