@@ -1,8 +1,8 @@
 @media print {
   /* print.css from blueprint CSS framework */
   .page {
-      margin-left: 0.3in;
-      margin-right: 0.2in;
+      margin-left: 0.1in;
+      margin-right: 0.1in;
       margin-top: 2in;
   }
   body {
