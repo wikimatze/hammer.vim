@@ -1,12 +1,22 @@
 [X] styles
-	[_] include a separate print stylesheet
+	[X] include a separate print stylesheet
 	: at the moment, printed page is completely blank
 	[X] emulate Safari Reader
 	[X] move stylesheet from 'plugin' to 'stylesheets'
+[_] PDF
+	[_] include PDF option
+	: i.e. as an alternative to HTML
+	[_] use wkpdf if available
+	: http://plessl.github.com/wkpdf/
+	[_] use pkhtmltopdf if available
+	: http://code.google.com/p/wkhtmltopdf/
 [_] filetype plugin
 	[_] rename 'plugin' to 'ftplugin'
 	[_] no need for "This is not a markdown file" message
-[_] generate HTML file
+[_] generate
+	: rather than a tmp file, create in same directory as source file
+	[_] HTML file
+	[_] PDF file
 [_] options
 	[_] markdown parser
 	: Kramdown default/fallback, but allow user to specify an existing markdown converter
