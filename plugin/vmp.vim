@@ -1,3 +1,5 @@
+set runtimepath+=~/.vim/plugin/vim-markdown-preview
+
 function! PreviewMKD()
   ruby << RUBY
 
@@ -55,6 +57,7 @@ function! PreviewMKD()
       File.open('%s' % [ file ], 'w') { |f| f.write(layout) }
       # Open the html file
       # Vim.command("silent !open '%s'" % [ file ])
+
       # Create and open a PDF file
       pdffile = File.join('/tmp', File.basename(name) + '.pdf')
       system("wkpdf --source #{file} --output #{pdffile}")
