@@ -1,3 +1,6 @@
+let g:VMPoutputformat = 'html'
+let g:VMPhtmlreader   = 'open'
+
 function! PreviewMKD()
 
 ruby << RUBY
@@ -31,7 +34,8 @@ ruby << RUBY
           <div id="centered">
             <div id="article">
               <div class="page">
-                #{Kramdown::Document.new(contents).to_html}
+       
+              #{Kramdown::Document.new(contents).to_html}
               </div>
             </div>
           </div>
@@ -41,10 +45,18 @@ ruby << RUBY
     </html>
   LAYOUT
 
-  file = File.join('/tmp', name + '.html')
-  File.open(file, 'w') { |f| f.write(layout) }
-  Vim.command("silent !open '%s'" % [ file ])
-  
+  case Vim.evaluate('g:VMPoutputformat')
+    when 'html'
+      reader = Vim.evaluate('g:VMPhtmlreader')
+      file = File.join('/tmp', name + '.html')
+      File.open(file, 'w') { |f| f.write(layout) }
+      Vim.command("silent ! #{reader} '%s'" % [ file ])
+    when 'pdf'
+      Vim.message('output format not implemented yet.')
+    else
+      Vim.message('Unrecongized output format! Check g:VMPoutputformat.')
+    end
+
 RUBY
 endfunction
 
