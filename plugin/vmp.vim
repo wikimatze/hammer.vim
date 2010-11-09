@@ -1,16 +1,19 @@
-let g:VMPoutputformat = 'html'
-let g:VMPhtmlreader   = 'open'
+let g:VMPoutputformat    = 'html'
+let g:VMPoutputdirectory = '/tmp'
+let g:VMPhtmlreader      = 'open'
 
 function! PreviewMKD()
 
 ruby << RUBY
 
-  runtime  = VIM.evaluate('&runtimepath').split(',')
-  css_base = runtime.detect { |path| File.exists? File.join(path, 'plugin', 'vmp.vim') }
-  name     = VIM::Buffer.current.name.nil? ? 'Untitled' : File.basename(Vim::Buffer.current.name)
+  runtime    = ViM.evaluate('&runtimepath').split(',')
+  css_base   = runtime.detect { |path| File.exists? File.join(path, 'plugin', 'vmp.vim') }
+  name       = ViM::Buffer.current.name.nil? ? 'Untitled' : File.basename(Vim::Buffer.current.name)
+  output_dir = Vim.evaluate('g:VMPoutputdirectory')
+  
   runtime.each { |path| $LOAD_PATH.unshift(File.join(path, 'plugin', 'vim-markdown-preview')) }
   
-  contents = Array.new(VIM::Buffer.current.count) { |i|VIM::Buffer.current[i + 1] }.join("\n")
+  contents = Array.new(VIM::Buffer.current.count) { |i| VIM::Buffer.current[i + 1] }.join("\n")
 
   require('kramdown/kramdown')
 
@@ -48,7 +51,7 @@ ruby << RUBY
   case Vim.evaluate('g:VMPoutputformat')
     when 'html'
       reader = Vim.evaluate('g:VMPhtmlreader')
-      file = File.join('/tmp', name + '.html')
+      file = File.join(output_dir, name + '.html')
       File.open(file, 'w') { |f| f.write(layout) }
       Vim.command("silent ! #{reader} '%s'" % [ file ])
     when 'pdf'
