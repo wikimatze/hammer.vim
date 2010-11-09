@@ -1,7 +1,7 @@
 let g:VMPoutputformat    = 'html'
 let g:VMPoutputdirectory = '/tmp'
 let g:VMPhtmlreader      = 'open'
-let g:VMPstylesheet      = 'safari-reader.css'
+let g:VMPstylesheet      = 'github.css'
 
 function! PreviewMKD()
 
