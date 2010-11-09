@@ -6,12 +6,13 @@ function! PreviewMKD()
 
 ruby << RUBY
 
-  runtime    = ViM.evaluate('&runtimepath').split(',')
+  runtime    = Vim.evaluate('&runtimepath').split(',')
+  runtime.each { |path| $LOAD_PATH.unshift(File.join(path, 'plugin', 'vim-markdown-preview')) }
+
   css_base   = runtime.detect { |path| File.exists? File.join(path, 'plugin', 'vmp.vim') }
-  name       = ViM::Buffer.current.name.nil? ? 'Untitled' : File.basename(Vim::Buffer.current.name)
+  name       = Vim::Buffer.current.name.nil? ? 'Untitled' : File.basename(Vim::Buffer.current.name)
   output_dir = Vim.evaluate('g:VMPoutputdirectory')
   
-  runtime.each { |path| $LOAD_PATH.unshift(File.join(path, 'plugin', 'vim-markdown-preview')) }
   
   contents = Array.new(VIM::Buffer.current.count) { |i| VIM::Buffer.current[i + 1] }.join("\n")
 
@@ -53,7 +54,7 @@ ruby << RUBY
       reader = Vim.evaluate('g:VMPhtmlreader')
       file = File.join(output_dir, name + '.html')
       File.open(file, 'w') { |f| f.write(layout) }
-      Vim.command("silent ! #{reader} '%s'" % [ file ])
+      Vim.command("silent ! #{reader} '%s' &" % [ file ])
     when 'pdf'
       Vim.message('output format not implemented yet.')
     else
