@@ -41,14 +41,9 @@ ruby << RUBY
     </html>
   LAYOUT
 
-
-      unless File.extname(name) =~ /\.(md|mkd|markdown)/
-        VIM.message('This file extension is not supported for Markdown previews')
-      else
-        file = File.join('/tmp', File.basename(name) + '.html')
-        File.open('%s' % [ file ], 'w') { |f| f.write(layout) }
-        Vim.command("silent !open '%s'" % [ file ])
-      end
+  file = File.join('/tmp', name + '.html')
+  File.open(file, 'w') { |f| f.write(layout) }
+  Vim.command("silent !open '%s'" % [ file ])
   
 RUBY
 endfunction
