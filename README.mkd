@@ -1,8 +1,36 @@
 ## vim-markdown-preview
 
-_vim-markdown-preview_ adds the option to preview markdown documents in the 
-browser from the vim editor.  
-The web page it opens is loosely styled on how GitHub would render README.mkd.
+vim-markdown-preview (abbreviated to VMP) is a Vim plugin to preview markdown
+documents.
+
+## Options
+
+VMP has a few global options which alter its behavior:
+
+* g:VMPoutputformat  
+  *Default*: "html".  
+  *Example*:  
+  `let g:VMPoutputformat = 'pdf'`  
+  *Note*   : Only "html" is supported right now.  
+
+* g:VMPoutputdirectory  
+  *Default*: "/tmp"   
+  *Example*:  
+  `let g:VMPoutputdirectory = '.'`  
+
+* g:VMPhtmlreader  
+  *Default*: "open"   
+  *Example*:  
+  `let g:VMPhtmlreader = 'firefox-bin'`  
+
+* g:VMPstylesheet
+  *Default*: "github.css"  
+  *Example*:  
+  `let g:VMPstylesheet "safari-reader.css"`  
+  *Note*   : Only "github.css" and "safari-reader.css" are accepted values.  
+
+None of these options were available before and haven't been released yet.  
+Clone the repo to try them!
 
 ## Install
 
