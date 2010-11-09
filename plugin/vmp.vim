@@ -1,6 +1,7 @@
 let g:VMPoutputformat    = 'html'
 let g:VMPoutputdirectory = '/tmp'
 let g:VMPhtmlreader      = 'open'
+let g:VMPstylesheet      = 'safari-reader.css'
 
 function! PreviewMKD()
 
@@ -10,6 +11,8 @@ ruby << RUBY
   runtime.each { |path| $LOAD_PATH.unshift(File.join(path, 'plugin', 'vim-markdown-preview')) }
 
   css_base   = runtime.detect { |path| File.exists? File.join(path, 'plugin', 'vmp.vim') }
+  stylesheet = File.join(css_base, 'plugin', 'vim-markdown-preview', 'stylesheets', 
+                         Vim.evaluate('g:VMPstylesheet'))
   name       = Vim::Buffer.current.name.nil? ? 'Untitled' : File.basename(Vim::Buffer.current.name)
   output_dir = Vim.evaluate('g:VMPoutputdirectory')
   
@@ -27,7 +30,7 @@ ruby << RUBY
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
       <link rel="stylesheet"
-            href="#{css_base}/plugin/vim-markdown-preview/stylesheets/safari-reader.css">
+            href="#{stylesheet}">
       </link>
 
       <title> #{name} </title>
@@ -37,8 +40,7 @@ ruby << RUBY
         <div id="container">
           <div id="centered">
             <div id="article">
-              <div class="page">
-       
+              <div class="page"> 
               #{Kramdown::Document.new(contents).to_html}
               </div>
             </div>
