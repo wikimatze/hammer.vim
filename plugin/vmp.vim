@@ -8,12 +8,21 @@ if !exists('g:VMPoutputdirectory')
 endif
 
 if !exists('g:VMPhtmlreader')
-	let g:VMPhtmlreader = 'open'
+	if has('mac')
+		let g:VMPhtmlreader = 'open'
+	elseif has('win32') || has('win64')
+		let g:VMPhtmlreader = 'start'
+	elseif has('unix') && executable('xdg-open')
+		let g:VMPhtmlreader = 'xdg-open'
+	else
+		let g:VMPhtmlreader = ''
+	end
 endif
 
 if !exists('g:VMPstylesheet')
 	let g:VMPstylesheet = 'github.css'
 endif
+
 
 function! PreviewMKD()
 

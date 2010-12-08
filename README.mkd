@@ -19,7 +19,7 @@ VMP has a few global options which alter its behavior:
   `let g:VMPoutputdirectory = '.'`  
 
 * g:VMPhtmlreader  
-  *Default*: "open"   
+  *Default*: "open" (Mac), "start" (Windows), "xdg-open" (Unix)   
   *Example*:  
   `let g:VMPhtmlreader = 'firefox-bin'`  
 
