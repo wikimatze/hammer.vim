@@ -75,9 +75,14 @@ ruby << RUBY
   case Vim.evaluate('g:VMPoutputformat')
     when 'html'
       reader = Vim.evaluate('g:VMPhtmlreader')
-      file = File.join(output_dir, name + '.html')
-      File.open(file, 'w') { |f| f.write(layout) }
-      Vim.command("silent ! #{reader} '%s' &" % [ file ])
+
+      if reader == ''
+          Vim.message('No suitable HTML reader found! Please set g:VMPhtmlreader.')
+      else
+        file = File.join(output_dir, name + '.html')
+        File.open(file, 'w') { |f| f.write(layout) }
+        Vim.command("silent ! #{reader} '%s' &" % [ file ])
+      end
     when 'pdf'
       Vim.message('output format not implemented yet.')
     else
