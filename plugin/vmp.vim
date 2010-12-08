@@ -1,7 +1,19 @@
-let g:VMPoutputformat    = 'html'
-let g:VMPoutputdirectory = '/tmp'
-let g:VMPhtmlreader      = 'open'
-let g:VMPstylesheet      = 'github.css'
+
+if !exists('g:VMPoutputformat')
+	let g:VMPoutputformat = 'html'
+endif
+
+if !exists('g:VMPoutputdirectory')
+	let g:VMPoutputdirectory = '/tmp'
+endif
+
+if !exists('g:VMPhtmlreader')
+	let g:VMPhtmlreader = 'open'
+endif
+
+if !exists('g:VMPstylesheet')
+	let g:VMPstylesheet = 'github.css'
+endif
 
 function! PreviewMKD()
 
