@@ -63,20 +63,6 @@ Alternatively, bind `:Mm` to a key binding:
 * Ruby support for vim.
 * kramdown (bundled with this package)
 
-## Credit
-
-* Mathias Billman  
-  This is an enitrely rewritten version of the vim script originally written by
-  Mathias Billman and found 
-  [here](http://mathias-biilmann.net/2009/1/markdown-preview-in-vim).
-
-* [moreweb](http://github.com/moreweb)  
-  Contributor.  
-
-* [maba](http://github.com/maba)  
-  Contributor. 
-
-
 ## Bugs
 
 Bugs are tracked through 
