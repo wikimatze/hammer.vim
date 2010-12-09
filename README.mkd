@@ -63,19 +63,6 @@ Alternatively, bind `:Mm` to a key binding:
 * Ruby support for vim.
 * kramdown (bundled with this package)
 
-## OSX
-
-_vim-markdown-preview_ was written to run on OSX, and it will work w/o 
-problems.  
-I recommend the safari browser because it will not open new tabs needlessly 
-if a document is already loaded in an existing tab/window.
-
-## Linux/Others
-
-_vim-markdown-preview_ is tied to the OSX command `open`.  
-You will need to replace it with something else - firefox-bin, for example, 
-for it to work on your operating system.
-
 ## Credit
 
 * Mathias Billman  
@@ -92,14 +79,7 @@ for it to work on your operating system.
 
 ## Bugs
 
-No known bugs right now. 
-[Found a bug?](http://github.com/robgleeson/vim-markdown-preview/issues).
+Bugs are tracked through 
+[The GitHub Issue Tracker](http://github.com/robgleeson/vim-markdown-preview/issues).
 
-## Contact
-
-* IRC  
-  irc.freenode.net/#flowof.info as 'robgleeson'
-
-* Mail  
-  rob [at] flowof.info
 
