@@ -1,16 +1,13 @@
 ## vim-markdown-preview
-
 vim-markdown-preview is a (customizable) plugin for the vim editor to preview markdown documents.
 
 ## Documentation
 
-See [doc/vmp.txt](http://github.com/robgleeson/vim-markdown-preview/blob/master/doc/vmp.txt)
-
+See [doc/vmp.txt](http://github.com/robgleeson/vim-markdown-preview/blob/master/doc/vmp.txt)  
 If you install vim-markdown-preview, please run `:helptags $HOME/.vim/doc` to be able to view
 the documentation from within vim.
 
 ## Install
-
 **Download**  
 
 * Option 1  
@@ -26,20 +23,17 @@ vim-markdown-preview is bundled with an installer script which will install to `
     sh install.sh
 
 ## Usage
-
 Send vim the command `:Mm` for a preview of your markdown document.  
 Alternatively, bind `:Mm` to a key binding: 
 `map <leader>p :Mm<CR>` 
 
 
 ## Dependencies
-
 * vim
 * Ruby support for vim.
 * kramdown (bundled with this package)
 
 ## Bugs
-
 Bugs are tracked through 
 [The GitHub Issue Tracker](http://github.com/robgleeson/vim-markdown-preview/issues).
 
