@@ -1,52 +1,27 @@
 ## vim-markdown-preview
 
-vim-markdown-preview (abbreviated to VMP) is a Vim plugin to preview markdown
-documents.
+vim-markdown-preview is a (customizable) plugin for the vim editor to preview markdown documents.
 
-## Options
+## Documentation
 
-VMP has a few global options which alter its behavior:
+See [doc/vmp.txt](http://github.com/robgleeson/vim-markdown-preview/blob/master/doc/vmp.txt)
 
-* g:VMPoutputformat  
-  *Default*: "html".  
-  *Example*:  
-  `let g:VMPoutputformat = 'pdf'`  
-  *Note*   : Only "html" is supported right now.  
-
-* g:VMPoutputdirectory  
-  *Default*: "/tmp"   
-  *Example*:  
-  `let g:VMPoutputdirectory = '.'`  
-
-* g:VMPhtmlreader  
-  *Default*: "open" (Mac), "start" (Windows), "xdg-open" (Unix)   
-  *Example*:  
-  `let g:VMPhtmlreader = 'firefox-bin'`  
-
-* g:VMPstylesheet
-  *Default*: "github.css"  
-  *Example*:  
-  `let g:VMPstylesheet "safari-reader.css"`  
-  *Note*   : Only "github.css" and "safari-reader.css" are accepted values.  
-
-None of these options were available before and haven't been released yet.  
-Clone the repo to try them!
+If you install vim-markdown-preview, please run `:helptags $HOME/.vim/doc` to be able to view
+the documentation from within vim.
 
 ## Install
 
 **Download**  
 
 * Option 1  
-  Cloning this repository is one option, and the master branch should always be 
-  in a working state.
+  Clone the repository! The master branch is where stable, or soon-to-be-released code lives.
    
 * Option 2  
   You can download versioned releases from the 
   [downloads](http://github.com/robgleeson/vim-markdown-preview/downloads) page.
 
 **Automatic installation**  
-vim-markdown-preview is bundled with an installer script which will install to 
-$HOME/.vim/plugin/
+vim-markdown-preview is bundled with an installer script which will install to `$HOME/.vim/plugin/`
 
     sh install.sh
 
