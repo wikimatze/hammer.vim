@@ -81,7 +81,8 @@ ruby << RUBY
       else
         file = File.join(output_dir, name + '.html')
         File.open(file, 'w') { |f| f.write(layout) }
-        Vim.command("silent ! #{reader} '%s' &" % [ file ])
+        Vim.command("silent ! #{reader} '%s'" % [ file ])
+        Vim.command 'redraw!'
       end
     when 'pdf'
       Vim.message('output format not implemented yet.')
