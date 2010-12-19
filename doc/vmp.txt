@@ -39,5 +39,5 @@ See http://github.com/robgleeson/vim-markdown-preview.
    Stylesheets are searched for in the vim-markdown-preview/stylesheets/ directory.
     
    Defaults to "github.css".
-   Other options are "safari-reader.css".
+   Other options are "safari-reader.css", "simple-print.css".
 
