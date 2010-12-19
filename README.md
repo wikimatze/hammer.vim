@@ -37,6 +37,10 @@
   If you're previewing documents in the links browser, remember to use ctrl+r after previewing a document
   for the 2nd, 3rd, ..., etc time or you'll be left with the cached version.
 
+## Screenshots
+  [links browser](http://ompldr.org/vNm1vYg)  
+  .. more to come!
+
 ## Bugs
   Bugs are tracked through 
   [The GitHub Issue Tracker](http://github.com/robgleeson/vim-markdown-preview/issues).
