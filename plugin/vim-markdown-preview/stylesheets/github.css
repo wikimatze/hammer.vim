@@ -1,6 +1,6 @@
 body div#container {
   margin            : 0 auto;
-  width             : 920px;
+  max-width         : 920px;
   background-color  : #f8f8f8;
   padding           : .7em;
   font-size         : 13.34px;
