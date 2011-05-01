@@ -27,7 +27,7 @@ You might need to install an extra dependency depending on the markup language y
 Ruby vim support is required, too!
 
     gem install github-markup
-    git clone http://github.com/robgleeson/hammer.vim.git
+    git clone git://github.com/robgleeson/hammer.vim.git
     cp -R hammer.vim/plugin $HOME/.vim/plugin
 
 
