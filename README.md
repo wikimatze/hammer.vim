@@ -1,6 +1,6 @@
 ![Hammer Mario!](http://i.imgur.com/HUuvF.png)
 
-Hammer.vim can translate a bunch of markup languages being edited in vim to HTML, and then open that HTML in a browser.   
+Hammer.vim can translate a bunch of markup languages to HTML, and preview them in your browser of choice. All from within vim!  
 By default, the preview is a clone of how GitHub would render _README.md_, but custom templates of your own are supported too.  
 
 This project was formerly _vim-markdown-preview_.
