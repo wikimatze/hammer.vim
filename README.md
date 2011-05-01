@@ -2,7 +2,7 @@
 
 **Hammer.vim**  
 Hammer.vim translates a bunch of markup languages you're working on in vim to HTML, and then opens that HTML in your browser.  
-By default, the preview is a clone of how GitHub would render _README.md_, but templates are supported too.  
+By default, the preview is a clone of how GitHub would render _README.md_, but custom templates of your own are supported too.  
 This project was formerly _vim-markdown-preview_.
 
 Supported Markup
