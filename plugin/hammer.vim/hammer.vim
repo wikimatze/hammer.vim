@@ -1,10 +1,11 @@
-ruby $LOAD_PATH.unshift Vim.evaluate('fnamemodify(expand("<sfile>"), ":p:h")')
+let g:HammerLocation = fnamemodify(expand("<sfile>"), ":p:h")
 
+ruby $LOAD_PATH.unshift Vim.evaluate('g:HammerLocation')
 ruby require 'rubygems'
 ruby require 'github/markup'
-ruby require 'hammer.rb'
-ruby require 'hammer/env.rb'
-ruby require 'vim/improvedbuffer'
+ruby require 'lib/hammer'
+ruby require 'lib/hammer/env'
+ruby require 'lib/vim/improvedbuffer'
 ruby require 'erb'
 
 function! Hammer()

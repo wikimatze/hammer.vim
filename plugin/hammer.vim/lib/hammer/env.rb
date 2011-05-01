@@ -4,8 +4,20 @@ module Hammer
 
     class << self
 
-      def base_path 
-        @base_path  ||= Vim.evaluate 'fnamemodify(expand("<sfile>"), ":p:h")'
+      def template
+        @template = File.join Vim.evaluate('g:HammerTemplate')
+      end
+
+      def directory
+        @directory = Vim.evaluate 'g:HammerDirectory'
+      end
+
+      def browser 
+        @browser = Vim.evaluate 'g:HammerBrowser'
+      end
+
+      def base_path
+        @base_path  ||= Vim.evaluate 'g:HammerLocation'
       end
       
       def template_path
