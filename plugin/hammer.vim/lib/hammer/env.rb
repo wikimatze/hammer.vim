@@ -5,7 +5,7 @@ module Hammer
     class << self
 
       def template
-        @template = File.join Vim.evaluate('g:HammerTemplate')
+        @template = File.join self.template_path, Vim.evaluate('g:HammerTemplate')
       end
 
       def directory
