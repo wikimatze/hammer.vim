@@ -4,6 +4,10 @@ module Hammer
 
     class << self
 
+      def [] key
+        self.send key
+      end
+
       def template
         @template = File.join self.template_path, Vim.evaluate('g:HammerTemplate')
       end
