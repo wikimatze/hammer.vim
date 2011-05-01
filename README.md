@@ -1,6 +1,5 @@
 ![Hammer Mario!](http://i.imgur.com/HUuvF.png)
 
-**Hammer.vim**  
 Hammer.vim can translate a bunch of markup languages being edited in vim to HTML, and then open that HTML in a browser.   
 By default, the preview is a clone of how GitHub would render _README.md_, but custom templates of your own are supported too.  
 
@@ -23,14 +22,21 @@ Anything _github-markup_ supports:
   comes with Perl >= 5.10. Lower versions should install Pod::Simple from CPAN.
 * .1 - Requires [`groff`](http://www.gnu.org/software/groff/)
 
+
+
+Requirements
+------------
+
+* vim built with Ruby support.
+* github-markup (_See install instructions_)
+* You might need to install an extra dependency depending on the markup language you want to render (See Above).
+
 Install 
 -------
-You might need to install an extra dependency depending on the markup language you want to render (See Above).  
-Ruby support for vim is a requirement, too!
 
-    gem install github-markup
-    git clone git://github.com/robgleeson/hammer.vim.git
-    cp -R hammer.vim/plugin $HOME/.vim/plugin
+    $ [sudo] gem install github-markup
+    $ git clone git://github.com/robgleeson/hammer.vim.git
+    $ cp -R hammer.vim/plugin $HOME/.vim/plugin
 
 
 Usage
@@ -57,10 +63,10 @@ Templates!
 ----------
 
 If you don't like the default template, you can write your own.  
-Check out the [default template](https://github.com/robgleeson/vim-markdown-preview/blob/develop/plugin/hammer.vim/templates/default.erb.html)
-for ideas on how it's done.  
-It's basically an erb template, with the markup transformed to HTML passed as a partial.  
+Templates are ERB layouts with rendered markup passed on as a partial.  
+Templates have access to paths used by Hammer, so you can link to assets(CSS, etc) easily.  
 
+The [default template](http://bit.ly/mCZLsI) serves as a good example to get you going.   
 Pull requests for new templates would be awesome ;-)
 
 Screenshots
