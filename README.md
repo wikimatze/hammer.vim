@@ -1,7 +1,8 @@
 ![Hammer Mario!](http://i.imgur.com/HUuvF.png)
 
 **Hammer.vim**  
-Hammer.vim translates a bunch of markup languages you're working on in vim to HTML, and then opens that HTML in your browser.
+Hammer.vim translates a bunch of markup languages you're working on in vim to HTML, and then opens that HTML in your browser.  
+This project was formerly _vim-markdown-preview_.
 
 Supported Markup
 ----------------
