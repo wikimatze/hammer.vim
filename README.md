@@ -36,7 +36,7 @@ Install
 
     $ [sudo] gem install github-markup
     $ git clone git://github.com/robgleeson/hammer.vim.git
-    $ cp -R hammer.vim/plugin $HOME/.vim/plugin
+    $ cp -R hammer.vim/plugin/* $HOME/.vim/plugin
 
 
 Usage
