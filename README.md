@@ -1,8 +1,9 @@
 ![Hammer Mario!](http://i.imgur.com/HUuvF.png)
 
 **Hammer.vim**  
-Hammer.vim translates a bunch of markup languages you're working on in vim to HTML, and then opens that HTML in your browser.  
+Hammer.vim can translate a bunch of markup languages being edited in vim to HTML, and then open that HTML in a browser.   
 By default, the preview is a clone of how GitHub would render _README.md_, but custom templates of your own are supported too.  
+
 This project was formerly _vim-markdown-preview_.
 
 Supported Markup
@@ -23,9 +24,9 @@ Anything _github-markup_ supports:
 * .1 - Requires [`groff`](http://www.gnu.org/software/groff/)
 
 Install 
---------
+-------
 You might need to install an extra dependency depending on the markup language you want to render (See Above).  
-Ruby vim support is required, too!
+Ruby support for vim is a requirement, too!
 
     gem install github-markup
     git clone git://github.com/robgleeson/hammer.vim.git
@@ -33,7 +34,7 @@ Ruby vim support is required, too!
 
 
 Usage
-------
+-----
 
 The `:Hammer` command will try to draw a preview of whatever file is currently in your buffer.  
 It helps to map it to a key though, and I personally use: `map <leader>p :Hammer<CR>`
