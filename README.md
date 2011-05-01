@@ -1,48 +1,72 @@
-## vim-markdown-preview
-  vim-markdown-preview is a (customizable) plugin for the vim editor to preview markdown documents.
+![Hammer Mario!](http://i.imgur.com/HUuvF.png)
 
-## Documentation
+**Hammer.vim**  
+Hammer.vim translates a bunch of markup languages you're working on in vim to HTML, and then opens that HTML in your browser.
 
-  See [doc/vmp.txt](http://github.com/robgleeson/vim-markdown-preview/blob/master/doc/vmp.txt)  
-  If you install vim-markdown-preview, please run `:helptags $HOME/.vim/doc` to be able to view
-  the documentation from within vim.
+Supported Markup
+----------------
 
-## Install
-**Download**  
+Anything _github-markup_ supports:  
 
-* Option 1  
-  Clone the repository! The master branch is where stable, or soon-to-be-released code lives.
-   
-* Option 2  
-  You can download versioned releases from the 
-  [downloads](http://github.com/robgleeson/vim-markdown-preview/downloads) page.
+* [.markdown](http://daringfireball.net/projects/markdown/) -- `gem install redcarpet`
+* [.textile](http://www.textism.com/tools/textile/) -- `gem install RedCloth`
+* [.rdoc](http://rdoc.sourceforge.net/)
+* [.org](http://orgmode.org/) -- `gem install org-ruby`
+* [.creole](http://wikicreole.org/) -- `gem install creole`
+* [.mediawiki](http://www.mediawiki.org/wiki/Help:Formatting) -- `gem install wikicloth`
+* [.rst](http://docutils.sourceforge.net/rst.html) -- `easy_install docutils`
+* [.asciidoc](http://www.methods.co.nz/asciidoc/) -- `brew install asciidoc`
+* [.pod](http://search.cpan.org/dist/perl/pod/perlpod.pod) -- `Pod::Simple::HTML`
+  comes with Perl >= 5.10. Lower versions should install Pod::Simple from CPAN.
+* .1 - Requires [`groff`](http://www.gnu.org/software/groff/)
 
-**Automatic installation**  
-  vim-markdown-preview is bundled with an installer script which will install to `$HOME/.vim/plugin/`
+Install 
+--------
+You might need to install an extra dependency depending on the markup language you want to render (See Above).  
+Ruby vim support is required, too!
 
-    sh install.sh
-
-## Usage
-  Send vim the command `:Mm` for a preview of your markdown document.  
-  Alternatively, bind `:Mm` to a key binding: 
-  `map <leader>p :Mm<CR>` 
-
-
-## Dependencies
-  * vim
-  * Ruby support for vim.
-  * kramdown (bundled with this package)
-
-## Notes
-  If you're previewing documents in the links browser, remember to use ctrl+r after previewing a document
-  for the 2nd, 3rd, ..., etc time or you'll be left with the cached version.
-
-## Screenshots
-  [links browser](http://ompldr.org/vNm1vYg)  
-  .. more to come!
-
-## Bugs
-  Bugs are tracked through 
-  [The GitHub Issue Tracker](http://github.com/robgleeson/vim-markdown-preview/issues).
+    gem install github-markup
+    git clone http://github.com/robgleeson/hammer.vim.git
+    cp -R hammer.vim/plugin $HOME/.vim/plugin
 
 
+Usage
+------
+
+The `:Hammer` command will try to draw a preview of whatever file is currently in your buffer.  
+It helps to map it to a key though, and I personally use: `map <leader>p :Hammer<CR>`
+
+There are a few options, too:  
+
+* g:HammerTemplate  
+  The template to render with. Default is `default`, a GitHub-esque design.
+
+* g:HammerDirectory  
+  Where previews are written to. Default is `/tmp`
+
+* g:HammerBrowser  
+  The template to open the preview with. Default is OS-dependent.  
+  `open` on OSX, `start` on Windows, and `xdg-open` on xorg-running machines.
+
+
+
+Templates!
+----------
+
+If you don't like the default template, you can write your own.  
+Check out the [default template](https://github.com/robgleeson/vim-markdown-preview/blob/develop/plugin/hammer.vim/templates/default.erb.html)
+for ideas on how it's done.  
+It's basically an erb template, with the markup transformed to HTML passed as a partial.  
+
+Pull requests for new templates would be awesome ;-)
+
+Screenshots
+-----------
+
+* [POD](http://d.pr/16YG)
+* [Markdown](http://d.pr/GEuT)
+
+Thanks
+------
+
+Many thanks to the @github team for _github-markup_!
