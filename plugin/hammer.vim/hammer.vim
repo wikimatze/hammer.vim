@@ -23,7 +23,7 @@ ruby << RUBY
     Vim.command "silent ! #{Hammer::ENV.browser} #{buffer.name}"
     Vim.command "redraw!"
   else
-    Vim.message "It is not possible to render #{buffer.extname} files." 
+    Vim.message "It is not possible to render #{buffer.extname} files. Missing dependency?" 
   end
 
 RUBY
