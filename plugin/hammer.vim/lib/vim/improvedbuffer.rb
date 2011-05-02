@@ -24,6 +24,10 @@ module Vim
       File.extname self.name
     end
 
+    def saved?
+      File.exist? self.name.to_s
+    end
+
   end
 
 end
