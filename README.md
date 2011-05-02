@@ -20,9 +20,9 @@ Anything _github-markup_ supports:
 * [.asciidoc](http://www.methods.co.nz/asciidoc/) -- `brew install asciidoc`
 * [.pod](http://search.cpan.org/dist/perl/pod/perlpod.pod) -- `Pod::Simple::HTML`
   comes with Perl >= 5.10. Lower versions should install Pod::Simple from CPAN.
-* .1 - Requires [`groff`](http://www.gnu.org/software/groff/)
-
-
+* .1 -- Requires [`groff`](http://www.gnu.org/software/groff/)
+* .html
+* .xhtml
 
 Requirements
 ------------

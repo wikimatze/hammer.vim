@@ -19,9 +19,13 @@ ruby << RUBY
 
     Vim.command "silent ! #{Hammer::ENV.browser} #{File.join Hammer::ENV.directory, buffer.basename}.html"
     Vim.command "redraw!"
+  elsif buffer.extname =~ /.(xhtml|html)/
+    Vim.command "silent ! #{Hammer::ENV.browser} #{buffer.name}"
+    Vim.command "redraw!"
   else
     Vim.message "It is not possible to render #{buffer.extname} files." 
   end
+
 RUBY
 endfunction
 
