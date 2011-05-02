@@ -17,11 +17,11 @@ module Vim
     end
 
     def basename
-      File.basename self.name
+      File.basename self.name.to_s
     end
 
     def extname
-      File.extname self.name
+      File.extname self.name.to_s
     end
 
     def saved?
