@@ -14,7 +14,7 @@ ruby << RUBY
 
   if GitHub::Markup.can_render? buffer.basename
     File.open File.join(Hammer::ENV.directory, "#{buffer.basename}.html"), 'w' do |f|
-      f.write Hammer.render { GitHub::Markup.render(buffer.name, buffer[1..-1]) }
+      f.write Hammer.render { GitHub::Markup.render(buffer.basename, buffer[1..-1]) }
     end
 
     Vim.command "silent ! #{Hammer::ENV.browser} #{File.join Hammer::ENV.directory, buffer.basename}.html"
