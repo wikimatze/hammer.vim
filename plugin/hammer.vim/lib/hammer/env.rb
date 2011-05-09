@@ -9,7 +9,7 @@ module Hammer
       end
 
       def template
-        @template = File.join self.template_path, Vim.evaluate('g:HammerTemplate')
+        @template = File.join self.template_path, Vim.evaluate('g:HammerTemplate') + '.html.erb'
       end
 
       def directory
