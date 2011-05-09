@@ -75,7 +75,16 @@ Screenshots
 * [POD](http://d.pr/16YG)
 * [Markdown](http://d.pr/GEuT)
 
+
+
 Thanks
 ------
 
 Many thanks to the @github team for _github-markup_!
+
+License
+--------
+
+_Hammer.vim_ is released under the [_MIT License_](http://en.wikipedia.org/wiki/MIT_License).  
+See [LICENSE](http://github.com/robgleeson/hammer.vim/blob/master/LICENSE) for details.
+
