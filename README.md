@@ -66,7 +66,7 @@ If you don't like the default template, you can write your own.
 Templates are ERB layouts with rendered markup passed on as a partial.  
 Templates have access to paths used by Hammer, so you can link to assets(CSS, etc) easily.  
 
-The [default template](http://bit.ly/jNSznP) serves as a good example to get you going.   
+The [default template](http://bit.ly/jaNkaJ) serves as a good example to get you going.   
 Pull requests for new templates would be awesome ;-)
 
 Screenshots
