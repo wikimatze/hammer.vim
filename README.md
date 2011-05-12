@@ -51,7 +51,8 @@ There are a few options, too:
   The template to render with. Default is `default`, a GitHub-esque design.
 
 * g:HammerDirectory  
-  Where previews are written to. Default is `/tmp`
+  Where previews are written to.  
+  Default is `%TEMP%` on Windows, and `/tmp` on everything else.
 
 * g:HammerBrowser  
   The template to open the preview with. Default is OS-dependent.  

@@ -1,5 +1,9 @@
 if !exists('g:HammerDirectory')
-  let g:HammerDirectory = '/tmp'
+  if has('win32') || has('win64')
+    let g:HammerDirectory = $TEMP
+  else
+    let g:HammerDirectory = '/tmp'
+  end
 endif
 
 if !exists('g:HammerBrowser')
