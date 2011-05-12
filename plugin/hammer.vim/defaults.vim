@@ -14,12 +14,12 @@ if !exists('g:HammerBrowser')
     " Crazy hack to be able to load Gems on Vim/Windows.
     " No idea _why_ rubygems can't be loaded from inside vim ...
     ruby << GEM_HACK
-      require 'rubygems'
-      Gem.source_index.find_name(//).each do |spec|
-        spec.require_paths.each do |require_path|
-       	  $LOAD_PATH.push File.join(spec.full_gem_path, require_path)
- 	      end
-      end	
+    require 'rubygems'
+    Gem.source_index.find_name(//).each do |spec|
+      spec.require_paths.each do |require_path|
+      $LOAD_PATH.push File.join(spec.full_gem_path, require_path)
+      end
+    end	
 GEM_HACK
 
     let g:HammerBrowser = 'start'
