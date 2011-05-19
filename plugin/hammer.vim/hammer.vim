@@ -3,7 +3,7 @@ if has('ruby')
 
   ruby $LOAD_PATH.unshift Vim.evaluate('g:HammerLocation')
   ruby require 'rubygems'
-  ruby require 'github/markup'
+  ruby begin ; require 'github/markup' ; rescue LoadError ; raise "Need to run 'gem install github-markup'" ; end
   ruby require 'lib/hammer'
   ruby require 'lib/hammer/env'
   ruby require 'lib/vim/improvedbuffer'
