@@ -1,3 +1,7 @@
+if !exists('g:HammerQuiet')
+  let g:HammerQuiet = 0
+end
+
 if !exists('g:HammerDirectory')
   if has('win32') || has('win64')
     let g:HammerDirectory = $TEMP
