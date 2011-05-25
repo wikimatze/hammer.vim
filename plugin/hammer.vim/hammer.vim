@@ -12,8 +12,8 @@ if has('ruby')
     require 'github/markup'
   rescue LoadError => e
     unless Vim.evaluate('g:HammerQuiet') == 1
-      Vim.message "github-markup is missing. Please run `gem install github-markup`"
-      Vim.message "Set g:HammerQuiet to 1 to silence this message"
+      Vim.message "github-markup is missing: Please run `gem install github-markup`. " \
+                  "Set g:HammerQuiet to 1 to silence this message"
     end
   end
 REQUIRE_GHMARKUP
