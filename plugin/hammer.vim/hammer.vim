@@ -24,11 +24,13 @@ REQUIRE_GHMARKUP
     buffer = Vim::Buffer.current.extend Vim::ImprovedBuffer
 
     if GitHub::Markup.can_render? buffer.basename
-      File.open File.join(Hammer::ENV.directory, "#{buffer.basename}.html"), 'w' do |f|
+      output_path = File.join Hammer::ENV.directory, "#{buffer.basename}.html"
+
+      File.open output_path, 'w' do |f|
         f.write Hammer.render { GitHub::Markup.render(buffer.basename, buffer[1..-1]) }
       end
 
-      Vim.command "silent ! #{Hammer::ENV.browser} #{File.join Hammer::ENV.directory, buffer.basename}.html"
+      Vim.command "silent ! #{Hammer::ENV.browser} #{output_path.inspect}"
       Vim.command "redraw!"
     elsif buffer.extname =~ /^\.(xhtml|html)$/
       Vim.command "silent ! #{Hammer::ENV.browser} #{buffer.name}"
