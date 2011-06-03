@@ -24,21 +24,16 @@ REQUIRE_GHMARKUP
   ruby << RUBY
     buffer = Vim::Buffer.current.extend Vim::ImprovedBuffer
 
-    def open_browser(output_path)
-      Vim.command "silent ! #{Shellwords.escape Hammer::ENV.browser} #{Shellwords.escape output_path}"
-      Vim.command "redraw!"
-    end
-
     if GitHub::Markup.can_render? buffer.basename
-      output_path = File.join Hammer::ENV.directory, "#{buffer.basename}.html"
+      path = File.join Hammer::ENV.directory, "#{buffer.basename}.html"
 
-      File.open output_path, 'w' do |f|
+      File.open path, 'w' do |f|
         f.write Hammer.render { GitHub::Markup.render(buffer.basename, buffer[1..-1]) }
       end
 
-      open_browser output_path
+      Hammer.open_browser path
     elsif buffer.extname =~ /^\.(xhtml|html)$/
-      open_browser buffer.name
+      Hammer.open_browser buffer.name
     else
       Vim.message "It is not possible to render #{buffer.extname} files. Missing dependency?" 
     end
