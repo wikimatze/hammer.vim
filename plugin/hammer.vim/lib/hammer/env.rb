@@ -1,5 +1,4 @@
 module Hammer
-
   module ENV
 
     class << self
@@ -23,17 +22,20 @@ module Hammer
       def base_path
         @base_path  ||= Vim.evaluate 'g:HammerLocation'
       end
-      
+
       def template_path
         @template_path ||= File.join self.base_path, 'templates'
       end
 
+      def asset_path
+        @asset_path ||= File.join self.base_path, 'assets'
+      end
+
       def stylesheet_path
-        @stylesheet_path ||= File.join self.base_path, 'stylesheets'
+        @stylesheet_path ||= File.join self.asset_path, 'stylesheets'
       end
 
     end
 
   end
-
 end
