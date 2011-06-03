@@ -27,12 +27,12 @@ module Hammer
         @template_path ||= File.join self.base_path, 'templates'
       end
 
-      def asset_path
-        @asset_path ||= File.join self.base_path, 'assets'
+      def assets_path
+        @assets_path ||= File.join self.base_path, 'assets'
       end
 
       def stylesheet_path
-        @stylesheet_path ||= File.join self.asset_path, 'stylesheets'
+        @stylesheet_path ||= File.join self.assets_path, 'stylesheets'
       end
 
     end
