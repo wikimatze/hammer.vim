@@ -7,6 +7,7 @@ if has('ruby')
   ruby require 'lib/hammer/env'
   ruby require 'lib/vim/improvedbuffer'
   ruby require 'erb'
+  ruby require 'shellwords'
   ruby << REQUIRE_GHMARKUP
   begin
     require 'github/markup'
@@ -23,16 +24,21 @@ REQUIRE_GHMARKUP
   ruby << RUBY
     buffer = Vim::Buffer.current.extend Vim::ImprovedBuffer
 
+    def open_browser(output_path)
+      Vim.command "silent ! #{Shellwords.escape Hammer::ENV.browser} #{Shellwords.escape output_path}"
+      Vim.command "redraw!"
+    end
+
     if GitHub::Markup.can_render? buffer.basename
-      File.open File.join(Hammer::ENV.directory, "#{buffer.basename}.html"), 'w' do |f|
+      output_path = File.join Hammer::ENV.directory, "#{buffer.basename}.html"
+
+      File.open output_path, 'w' do |f|
         f.write Hammer.render { GitHub::Markup.render(buffer.basename, buffer[1..-1]) }
       end
 
-      Vim.command "silent ! #{Hammer::ENV.browser} #{File.join Hammer::ENV.directory, buffer.basename}.html"
-      Vim.command "redraw!"
+      open_browser output_path
     elsif buffer.extname =~ /^\.(xhtml|html)$/
-      Vim.command "silent ! #{Hammer::ENV.browser} #{buffer.name}"
-      Vim.command "redraw!"
+      open_browser buffer.name
     else
       Vim.message "It is not possible to render #{buffer.extname} files. Missing dependency?" 
     end
