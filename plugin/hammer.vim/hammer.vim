@@ -28,7 +28,7 @@ REQUIRE_GHMARKUP
       path = File.join Hammer::ENV.directory, "#{buffer.basename}.html"
 
       File.open path, 'w' do |f|
-        f.write Hammer.render { GitHub::Markup.render(buffer.basename, buffer[1..-1]) }
+        f.write Hammer.render { GitHub::Markup.render(buffer.basename, buffer[0..-1]) }
       end
 
       Hammer.open_browser path

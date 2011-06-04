@@ -2,28 +2,33 @@ module Vim
 
   module ImprovedBuffer
 
+    # Adds a more Ruby-like interface to Vim::Buffer#[].
+    #
+    # @param  [Fixnum, Range] key
+    # @return [String]
     def [] key
       if key.is_a? Range
-        if key.end < 0
-          key = key.begin .. self.count - (key.end + 1).abs 
-        end
+        bufsize  = self.count
+        key      = bufsize - (key.begin).abs .. key.end if key.begin < 0
+        key      = key.begin .. bufsize - (key.end).abs if key.end < 0
 
-        key.map do |number|
-          super number 
-        end.join "\n"
+        key.map { |number| super number + 1 }.join "\n"
       else
-        super
+        super number + 1
       end
     end
 
+    # @return [String] Returns the filename of the buffer.
     def basename
       File.basename self.name.to_s
     end
 
+    # @return [String] Returns the file extension of the buffer.
     def extname
       File.extname self.name.to_s
     end
 
+    # @return [Boolean] Returns true if the buffer has been saved to disk.
     def saved?
       File.exist? self.name.to_s
     end
