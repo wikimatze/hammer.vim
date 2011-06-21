@@ -7,6 +7,10 @@ module Hammer
         self.send key
       end
 
+      def template_name
+        Vim.evaluate('g:HammerTemplate')
+      end
+
       def template
         @template = File.join self.template_path, Vim.evaluate('g:HammerTemplate') + '.html.erb'
       end
@@ -28,11 +32,11 @@ module Hammer
       end
 
       def assets_path
-        @assets_path ||= File.join self.base_path, 'assets'
+        @assets_path ||= File.join self.base_path, 'assets' 
       end
 
       def stylesheet_path
-        @stylesheet_path ||= File.join self.assets_path, 'stylesheets'
+        File.join self.assets_path, 'stylesheets', template_name
       end
 
     end
