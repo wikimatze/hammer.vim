@@ -16,7 +16,27 @@ body div#content h2, body div#content h3, body div#content h4
 
 body div#content pre 
 {
-  padding    : 5px;
-  background : #f8f8ff;
-  border     : 1px solid #d4d4e3
+  padding          : 5px;
+  border-style     : solid;
+  border-width     : 1px;
+  border-color     : #E0E0E0;
+  background-color : #F8F8FF;
 }
+
+body div#content pre code 
+{
+  background-color : #F8F8FF;
+  border           : none;
+}
+
+body div#content code 
+{
+  font-family      : courier, fixed;
+  display          : inline-block;
+  padding          : 0px 2px 0px 2px;
+  background-color : #F8F8FF;
+  border           : 1px #E0E0E0 solid;
+}
+
+
+
