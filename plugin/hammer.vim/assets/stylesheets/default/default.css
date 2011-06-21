@@ -4,8 +4,7 @@ body div#content
   max-width         : 920px;
   background-color  : #f8f8f8;
   padding           : .7em;
-  font-size         : 13.34px;
-  font-family       : verdana, sans-serif;
+  font              : 13.34px helvetica, arial, freesans, clean, sans-serif; 
   border            : 1px #E0E0E0 solid;
 }
 
