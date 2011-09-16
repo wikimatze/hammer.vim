@@ -1,7 +1,11 @@
+require 'hammer/env'
+require 'vim/improvedbuffer'
+require 'erb'
+require 'shellwords'
+require 'github/markup'
+
 module Hammer
-
   class << self
-
     def open_browser path
       Vim.command "silent ! #{Shellwords.escape Hammer::ENV.browser} #{Shellwords.escape path}"
       Vim.command "redraw!"
@@ -11,7 +15,5 @@ module Hammer
       template = ERB.new File.read(Hammer::ENV.template) 
       template.result binding 
     end
-
   end
- 
 end

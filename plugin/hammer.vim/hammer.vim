@@ -1,25 +1,6 @@
 if has('ruby')
-  let g:HammerLocation = fnamemodify(expand("<sfile>"), ":p:h")
-
-  ruby $LOAD_PATH.unshift Vim.evaluate('g:HammerLocation')
-  ruby require 'rubygems'
-  ruby require 'lib/hammer'
-  ruby require 'lib/hammer/env'
-  ruby require 'lib/vim/improvedbuffer'
-  ruby require 'erb'
-  ruby require 'shellwords'
-  ruby << REQUIRE_GHMARKUP
-  begin
-    require 'github/markup'
-  rescue LoadError => e
-    unless Vim.evaluate('g:HammerQuiet') == 1
-      Vim.message "github-markup is missing: Please run `gem install github-markup`. " \
-                  "Set g:HammerQuiet to 1 to silence this message"
-    end
-  end
-REQUIRE_GHMARKUP
-
-
+  source fnamemodify(expand("<sfile>"), ":p:h") . "bootstrap"
+  
   function! Hammer()
   ruby << RUBY
     buffer = Vim::Buffer.current.extend Vim::ImprovedBuffer
