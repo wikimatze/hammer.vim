@@ -1,4 +1,4 @@
-require 'open3'
+require 'digest/md5'
 
 module Hammer
   class PygmentizedMarkdown 
@@ -13,16 +13,15 @@ module Hammer
       # Regexp taken from YARD.
       @text.gsub!(/<pre\s*(?:lang="(.+?)")?>(?:\s*<code>)?(.+?)(?:<\/code>\s*)?<\/pre>/m) do
         language = $1.nil? ? "-g" : "-l #{$1}"
-        text = $2
+        text     = $2
 
-        file = File.join(Hammer::ENV.directory, rand(10000).to_s)
+        file = File.join(Hammer::ENV.directory, Digest::MD5.hexdigest(text))
         File.open(file, 'w') { |f| f.write(text) }
+        
         Vim.command("silent ! pygmentize #{language} -f html #{file} &")
         Vim.command("redraw!")
-        text = File.read(file)
-        #File.delete file
 
-        text
+        text = File.read(file)
       end
 
       @text
