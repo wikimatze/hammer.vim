@@ -5,7 +5,7 @@ if has('ruby')
   ruby require 'rubygems'
   ruby require 'lib/hammer'
   ruby require 'lib/hammer/env'
-  ruby require 'lib/hammer/pygmentizedmarkdown'
+  ruby require 'lib/hammer/pygment'
   ruby require 'lib/vim/improvedbuffer'
   ruby require 'erb'
   ruby require 'shellwords'
@@ -29,7 +29,7 @@ REQUIRE_GHMARKUP
       path = File.join Hammer::ENV.directory, "#{buffer.basename}.html"
 
       File.open path, 'w' do |f|
-        text = Hammer::PygmentizedMarkdown.new(buffer[0..-1]).to_html if %w(.md .mkd .markdown).include? buffer.extname
+        text = Hammer::Pygment.new(buffer).to_html if %w(.md .mkd .markdown).include? buffer.extname
         f.write Hammer.render { GitHub::Markup.render(buffer.basename, text) }
       end
 
