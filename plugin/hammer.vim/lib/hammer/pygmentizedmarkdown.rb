@@ -15,11 +15,12 @@ module Hammer
         language = $1.nil? ? "-g" : "-l #{$1}"
         text = $2
 
-        Open3.popen3 "pygmentize #{language} -f html" do |stdin, stdout|
-          stdin.write text
-          stdin.close
-          text = stdout.read
-        end
+        file = File.join(Hammer::ENV.directory, rand(10000).to_s)
+        File.open(file, 'w') { |f| f.write(text) }
+        Vim.command("silent ! pygmentize #{language} -f html #{file} &")
+        Vim.command("redraw!")
+        text = File.read(file)
+        #File.delete file
 
         text
       end
