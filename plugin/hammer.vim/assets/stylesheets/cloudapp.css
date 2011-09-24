@@ -133,7 +133,8 @@ table {
   margin: 0;
 }
 
-.monsoon ol > ol {
+.monsoon ol li ol {
+  margin-top: 8px !important;
   padding: 0 0 0 24px;
 }
 
@@ -150,7 +151,8 @@ table {
   margin: 0;
 }
 
-.monsoon ul > ul {
+.monsoon ul li ul {
+  margin-top: 8px !important;
   padding: 0 0 0 24px;
 }
 
