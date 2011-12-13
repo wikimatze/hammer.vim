@@ -18,6 +18,10 @@ module Hammer::ENV
       @browser = Vim.evaluate 'g:HAMMER_BROWSER'
     end
 
+    def commands_path
+      @commands_path ||= File.join(install_path, "commands")
+    end
+
     def renderers_path
       @renderers_path ||= File.join(install_path, "renderers")
     end
