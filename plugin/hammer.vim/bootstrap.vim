@@ -38,8 +38,10 @@ ruby Hammer.load_renderers!
 
 if has('ruby')
   function! Hammer()
-    ruby buffer = Vim::Buffer.current.extend Vim::ImprovedBuffer
-    ruby Hammer.render!(buffer)
+    ruby <<RENDER!
+      buffer = Vim::Buffer.current.extend Vim::ImprovedBuffer
+      Hammer.render!(buffer)
+RENDER!
   endfunction
 else
   function! Hammer()
