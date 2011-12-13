@@ -18,8 +18,12 @@ module Hammer::ENV
       @browser = Vim.evaluate 'g:HAMMER_BROWSER'
     end
 
+    def renderers_path
+      @renderers_path ||= File.join(install_path, "renderers")
+    end
+
     def install_path
-      @base_path  ||= Vim.evaluate 'g:HAMMER_INSTALL_PATH'
+      @install_path  ||= Vim.evaluate 'g:HAMMER_INSTALL_PATH'
     end
 
     def template_path

@@ -34,6 +34,7 @@ endif
 ruby $: << File.join(Vim.evaluate('g:HAMMER_INSTALL_PATH'), 'lib') 
 ruby require 'hammer'
 ruby Hammer.load_dependencies! 
+ruby Hammer.load_renderers!
 
 if has('ruby')
   function! Hammer()

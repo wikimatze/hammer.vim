@@ -36,6 +36,7 @@ module Hammer
 
     #
     # Loads all dependencies from {dependencies}.
+    #
     # @return [void] 
     #
     def load_dependencies! 
@@ -46,6 +47,20 @@ module Hammer
         else
           met_dependencies << dependency
         end
+      end
+    end
+
+    #
+    # Loads all renderers present in {Hammer::ENV.renderers_path}.
+    #
+    # @return [void]
+    def load_renderers!
+      return nil unless dependencies_met?  
+      glob = File.join(Hammer::ENV.renderers_path, "*.rb")
+
+      Dir[glob].each do |renderer|
+        to_ruby = File.read(renderer) 
+        GitHub::Markup.instance_eval(to_ruby) 
       end
     end
 
@@ -88,8 +103,6 @@ module Hammer
           end
         
           Hammer.open_browser path
-        elsif buffer.extname =~ /^\.(xhtml|html)$/
-          Hammer.open_browser buffer.name
         else
           Vim.message "It is not possible to render #{buffer.extname} files." \
                       "Missing dependency?" 
