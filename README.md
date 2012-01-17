@@ -43,6 +43,12 @@ You may need to install other dependencies for your markup language (See Above)
     $ git clone git://github.com/robgleeson/hammer.vim.git
     $ cp -R hammer.vim/plugin/* $HOME/.vim/plugin
 
+
+__SCREENSHOTS__
+
+* [POD](http://d.pr/16YG)
+* [Markdown](http://d.pr/GEuT)
+
 __RVM USERS__
 
 If you use RVM, it may be the culprit of what appear to be random segmentation   
@@ -61,13 +67,6 @@ shell function that unsets `$GEM_HOME` and `$GEM_PATH` before the launch of Vim:
     {
       (unset GEM_PATH GEM_HOME; command mvim "$@")
     }
-
-
-__SCREENSHOTS__
-
-* [POD](http://d.pr/16YG)
-* [Markdown](http://d.pr/GEuT)
-
 
 __LICENSE__
 
