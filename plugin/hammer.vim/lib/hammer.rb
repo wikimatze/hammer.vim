@@ -88,6 +88,15 @@ module Hammer
       Vim.command "redraw!"
     end
 
+    #
+    # Converts the contents of the buffer to HTML, and displays them in a
+    # browser.
+    #
+    # @param [Vim::ImprovedBuffer]
+    #   A {Vim::ImprovedBuffer} object.
+    #
+    # @return [void]
+    #
     def render! buffer
       unless dependencies_met?
         msg = "Hammer is missing dependenices: #{missing_dependencies.join(', ')}"
