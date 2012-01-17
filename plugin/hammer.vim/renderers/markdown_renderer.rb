@@ -6,13 +6,12 @@ require 'redcarpet'
 #
 class Hammer::MarkdownRenderer < Redcarpet::Render::HTML
 
+=begin
+  # TODO: implement me
   def block_code code, language
-    if defined?(Albino)
-      Albino.safe_colorize(code, language)
-    else
-      code
-    end
+    code
   end
+=end
 
 end
 
