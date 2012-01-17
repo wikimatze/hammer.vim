@@ -1,14 +1,23 @@
-![Hammer Mario!](http://i.imgur.com/HUuvF.png)
+__OVERVIEW__
 
-Hammer.vim can translate a bunch of markup languages to HTML, and preview them in your browser of choice. All from within vim!  
-By default, the preview is a clone of how GitHub would render _README.md_, but custom templates of your own are supported too.  
+| Project         | Hammer.vim 
+|:----------------|:--------------------------------------------------
+| Homepage        | https://github.com/robgleeson/hammer.vim
+| Author          | Rob Gleeson
 
-This project was formerly _vim-markdown-preview_.
+__DESCRITPION__
 
-Supported Markup
-----------------
+Hammer is a Vim plugin written in Ruby that can be used to render your favorite   
+markup language to HTML for viewing in your browser of choice.    
 
-Anything _github-markup_ supports:  
+It supports a large number of markup languages out of box but it also supports   
+adding custom renderers for markup languages it does not support.
+
+It has support for multiple different layout (with one styled like the GitHub   
+README layout). You can use your favorite template language to draw up your own   
+layouts (ERB, HAML, …). Layouts are passed the rendered HTML as a partial.
+
+__SUPPORTED MARKUP__
 
 * [.markdown](http://daringfireball.net/projects/markdown/) -- `gem install redcarpet`
 * [.textile](http://www.textism.com/tools/textile/) -- `gem install RedCloth`
@@ -24,68 +33,23 @@ Anything _github-markup_ supports:
 * .html
 * .xhtml
 
-Requirements
-------------
 
-* vim built with Ruby support.
-* github-markup (_See install instructions_)
-* You might need to install an extra dependency depending on the markup language you want to render (See Above).
+__INSTALL__
 
-Install 
--------
+You may need to install other dependencies for your markup language (See Above)  
 
-    $ [sudo] gem install github-markup
+    $ [sudo] gem install github-markup tilt albino
+    $ [sudo] sudo easy_install pygments
     $ git clone git://github.com/robgleeson/hammer.vim.git
     $ cp -R hammer.vim/plugin/* $HOME/.vim/plugin
 
 
-Usage
------
-
-The `:Hammer` command will try to draw a preview of whatever file is currently in your buffer.  
-It helps to map it to a key though, and I personally use: `map <leader>p :Hammer<CR>`
-
-There are a few options, too:  
-
-* g:HammerTemplate  
-  The template to render with. Default is `default`, a GitHub-esque design.
-
-* g:HammerDirectory  
-  Where previews are written to.  
-  Default is `%TEMP%` on Windows, and `/tmp` on everything else.
-
-* g:HammerBrowser  
-  The template to open the preview with. Default is OS-dependent.  
-  `open` on OSX, `start` on Windows, and `xdg-open` on xorg-running machines.
-
-
-
-Templates!
-----------
-
-If you don't like the default template, you can write your own.  
-Templates are ERB layouts with rendered markup passed on as a partial.  
-Templates have access to paths used by Hammer, so you can link to assets(CSS, etc) easily.  
-
-The [default template](http://bit.ly/jaNkaJ) serves as a good example to get you going.   
-Pull requests for new templates would be awesome ;-)
-
-Screenshots
------------
+__SCREENSHOTS__
 
 * [POD](http://d.pr/16YG)
 * [Markdown](http://d.pr/GEuT)
 
 
+__LICENSE__
 
-Thanks
-------
-
-Many thanks to the @github team for _github-markup_!
-
-License
---------
-
-_Hammer.vim_ is released under the [_MIT License_](http://en.wikipedia.org/wiki/MIT_License).  
-See [LICENSE](http://github.com/robgleeson/hammer.vim/blob/master/LICENSE) for details.
-
+See LICENSE.txt
