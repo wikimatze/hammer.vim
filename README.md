@@ -43,6 +43,25 @@ You may need to install other dependencies for your markup language (See Above)
     $ git clone git://github.com/robgleeson/hammer.vim.git
     $ cp -R hammer.vim/plugin/* $HOME/.vim/plugin
 
+__RVM USERS__
+
+If you use RVM, it may be the culprit of what appear to be random segmentation   
+faults but they're not random and their cause is easily pin pointed.
+
+RVM sets `$GEM_HOME` and `$GEM_PATH` to point at the gems for the currently   
+selected RVM ruby, but Vim may not be built against the Ruby selected by RVM.  
+If Vim were to be built against 1.8 and RVM pointed at gems for 1.9, you'll see   
+Vim try to load 1.9 C extensions, which can end up causing segmentation faults   
+in the worst possible scenario.
+
+The solution proposed by Wayne Seguin(author of RVM) is to define 'vim' as a   
+shell function that unsets `$GEM_HOME` and `$GEM_PATH` before the launch of Vim:
+
+    mvim()
+    {
+      (unset GEM_PATH GEM_HOME; command mvim "$@")
+    }
+
 
 __SCREENSHOTS__
 
