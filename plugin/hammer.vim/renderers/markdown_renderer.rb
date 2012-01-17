@@ -15,7 +15,7 @@ class Hammer::MarkdownRenderer < Redcarpet::Render::HTML
 
 end
 
-markup :redcarpet, /md|mkd|markdown/ do |content|
+markup :redcarpet, /md|mkd|markdown|mdwn/ do |content|
   renderer = Redcarpet::Markdown.new Hammer::MarkdownRenderer.new,
                                      :tables => true,
                                      :fenced_code_blocks => true,
