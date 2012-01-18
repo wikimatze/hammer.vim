@@ -7,15 +7,19 @@ __OVERVIEW__
 
 __DESCRITPION__
 
-Hammer is a Vim plugin written in Ruby that can be used to render your favorite   
-markup language to HTML for viewing in your browser of choice.    
+Hammer is a Vim plugin written (mostly) in Ruby.  
+It can be used to transform your markup language of choice to HTML, and open    
+the transformed HTML in whatever your favorite browser is.
 
 It supports a large number of markup languages out of box but it also supports   
 adding custom renderers for markup languages it does not support.
 
-It has support for multiple different layout (with one styled like the GitHub   
+It has support for multiple different layouts (with one styled like the GitHub   
 README layout). You can use your favorite template language to draw up your own   
 layouts (ERB, HAML, …). Layouts are passed the rendered HTML as a partial.
+
+People familiar with Ruby web development should feel right at home with the   
+layout & partial style templates.
 
 __SUPPORTED MARKUP__
 
@@ -34,12 +38,30 @@ __SUPPORTED MARKUP__
 * .xhtml
 
 
+__COMMANDS__
+
+The `:Hammer` command will transform your content to HTML, and open your 
+browser.  
+
+__CONFIG VARIABLES__
+
+* g:HAMMER\_DIRECTORY  
+  The path where transformed HTML files are kept.    
+  Defaults to `/tmp` on UNIX, and `$TEMP` on Windows.  
+
+* g:HAMMER\_BROWSER  
+  The path to a browser for viewing HTML files.  
+  Defaults to `open` on OSX, `start` on Windows, and `xdg-open` on X11 machines.  
+
+* g:HAMMER\_TEMPLATE  
+  The template to use.  
+  Defaults to 'default', a GitHub-esque README template.
+
 __INSTALL__
 
 You may need to install other dependencies for your markup language (See Above)  
 
-    $ [sudo] gem install github-markup tilt albino
-    $ [sudo] sudo easy_install pygments
+    $ [sudo] gem install github-markup tilt coderay
     $ git clone git://github.com/robgleeson/hammer.vim.git
     $ cp -R hammer.vim/plugin/* $HOME/.vim/plugin
 
@@ -48,6 +70,7 @@ __SCREENSHOTS__
 
 * [POD](http://d.pr/16YG)
 * [Markdown](http://d.pr/GEuT)
+
 
 __RVM USERS__
 
