@@ -9,4 +9,4 @@ plugin.
 
 - TODO: register the plugin on http://www.vim.org/index.php
 - TODO: add a chapter of "Self-Promotion" chapter on the README
-- TODO: create the hammer.txt documentation in Vim, so that users
+- TODO: create the hammer.txt documentation in Vim, so that Users can use the :help command
