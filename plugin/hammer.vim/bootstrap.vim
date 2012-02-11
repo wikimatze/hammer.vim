@@ -31,12 +31,12 @@ if !exists('g:HAMMER_TEMPLATE')
   let g:HAMMER_TEMPLATE = 'default'
 endif
 
-ruby $: << File.join(Vim.evaluate('g:HAMMER_INSTALL_PATH'), 'lib') 
-ruby require 'hammer'
-ruby Hammer.load_dependencies! 
-ruby Hammer.load_renderers!
-
 if has('ruby')
+  ruby $: << File.join(Vim.evaluate('g:HAMMER_INSTALL_PATH'), 'lib') 
+  ruby require 'hammer'
+  ruby Hammer.load_dependencies! 
+  ruby Hammer.load_renderers!
+
   function! Hammer()
     ruby <<RENDER!
       buffer = Vim::Buffer.current.extend Vim::ImprovedBuffer
