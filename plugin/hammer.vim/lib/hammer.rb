@@ -83,9 +83,10 @@ module Hammer
     #
     def open_browser path
       browser_path = Shellwords.escape(Hammer::ENV.browser)
+      browser_args = Hammer::ENV.browser_args
       file_path    = Shellwords.escape(path)
 
-      Vim.command "silent ! #{browser_path} #{file_path}"
+      Vim.command "silent ! #{browser_path} #{browser_args} #{file_path}"
       Vim.command "redraw!"
     end
 

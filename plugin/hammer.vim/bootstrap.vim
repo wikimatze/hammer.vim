@@ -27,6 +27,10 @@ if !exists('g:HAMMER_BROWSER')
   end
 endif
 
+if !exists('g:HAMMER_BROWSER_ARGS')
+  let g:HAMMER_BROWSER_ARGS = ''
+endif
+
 if !exists('g:HAMMER_TEMPLATE')
   let g:HAMMER_TEMPLATE = 'default'
 endif
