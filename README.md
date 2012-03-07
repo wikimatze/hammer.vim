@@ -9,7 +9,7 @@
 ## DESCRITPION
 
 Hammer is a Vim plugin written (mostly) in Ruby.  It can be used to transform your markup language
-of choice to HTML, and open    the transformed HTML in whatever your favorite browser is.
+of choice to HTML, and open the transformed HTML in whatever your favorite browser is.
 
 It supports a large number of markup languages out of box but it also supports   adding custom
 renderers for markup languages it does not support.
@@ -105,7 +105,7 @@ See LICENSE.txt
 
 ## TODO
 
-- register the plugin on http://www.vim.org/index.php
+- √ register the plugin on http://www.vim.org/index.php (see [http://www.vim.org/scripts/script.php?script_id=3962](http://www.vim.org/scripts/script.php?script_id=3962))
 - add a chapter of "Self-Promotion" chapter on the README
 - create the hammer.txt documentation in Vim, so that Users can use the :help command
 
