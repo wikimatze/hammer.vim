@@ -57,6 +57,10 @@ __CONFIG VARIABLES__
   The template to use.  
   Defaults to 'default', a GitHub-esque README template.
 
+* g:HAMMER\_BROWSER\_ARGS
+  Optional arguments to pass to the `browser` command.  On OS X, it can be useful
+  to set this to '-g' to open the browser window in the background.
+
 __INSTALL__
 
 You may need to install other dependencies for your markup language (See Above)  
