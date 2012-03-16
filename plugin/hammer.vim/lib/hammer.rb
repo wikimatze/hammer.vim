@@ -15,8 +15,7 @@ module Hammer
         "erb",
         "shellwords",
         "github/markup",
-        "tilt",
-        "albino"
+        "tilt"
       ]
     end
 
