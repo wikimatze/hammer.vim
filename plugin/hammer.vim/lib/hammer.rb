@@ -117,7 +117,7 @@ module Hammer
       File.open path, 'w' do |f|
         tilt = Tilt.new(Hammer::ENV.template)
         output = tilt.render do
-          GitHub::Markup.render(buffer.basename, buffer[0..-1])
+          GitHub::Markup.render(buffer.basename, buffer[1..-1])
         end
 
         f.write(output)

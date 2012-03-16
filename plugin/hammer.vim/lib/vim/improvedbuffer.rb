@@ -2,19 +2,21 @@ module Vim
 
   module ImprovedBuffer
 
+    #
     # Adds a more Ruby-like interface to Vim::Buffer#[].
     #
     # @param  [Fixnum, Range] key
     # @return [String]
+    #
     def [] key
       if key.is_a? Range
         bufsize  = self.count
         key      = bufsize - (key.begin).abs .. key.end if key.begin < 0
         key      = key.begin .. bufsize - (key.end).abs if key.end < 0
 
-        key.map { |number| super number + 1 }.join "\n"
+        key.map { |number| super(number) }.join "\n"
       else
-        super number + 1
+        super(number)
       end
     end
 
@@ -36,4 +38,3 @@ module Vim
   end
 
 end
-
