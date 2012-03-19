@@ -87,7 +87,7 @@ Based on original CSS by Russ Maschmeyer, aka StrangeNative.
 http://www.strangenative.com
 @strangenative
 
-Creative Commons License by Attribution. 
+Creative Commons License by Attribution.
 Feel free to take it, adapt it, & use it on both commercial and non-commercial projects.
 Though we'd like a smidgeon of credit, so just leave this bit in here. K?
 */
@@ -170,10 +170,10 @@ hr                          { display: block;position: relative;padding: 0;margi
 
 /* Tables
 -------------------------------------------------------------- */
-/* 
-  Because of the need for padding on TH and TD, the vertical rhythm 
-  on table cells has to be 27px, instead of the standard 18px or 36px 
-  of other elements. 
+/*
+  Because of the need for padding on TH and TD, the vertical rhythm
+  on table cells has to be 27px, instead of the standard 18px or 36px
+  of other elements.
  */
 table                       { margin-bottom: 1.4em; width: 100%; }
 th                          { font-weight: bold }
@@ -182,8 +182,8 @@ th,
 td,
 caption                     { padding: 4px 10px 4px 5px }
 /*
-  You can zebra-stripe your tables in outdated browsers by adding 
-  the class "even" to every other table row. 
+  You can zebra-stripe your tables in outdated browsers by adding
+  the class "even" to every other table row.
  */
 tbody tr:nth-child(even) td,
 tbody tr.even td            { background: #eee8d5 }

@@ -1,5 +1,4 @@
-body div#content 
-{
+body div#content {
   margin            : 0 auto;
   max-width         : 920px;
   background-color  : #f8f8f8;
@@ -9,14 +8,12 @@ body div#content
   border            : 1px #E0E0E0 solid;
 }
 
-body div#content h2, body div#content h3, body div#content h4 
-{
+body div#content h2, body div#content h3, body div#content h4 {
   padding-top  : 10px;
   border-top   : 4px solid #E0E0E0;
 }
 
-body div#content pre 
-{
+body div#content pre {
   padding          : 5px;
   border-style     : solid;
   border-width     : 1px;
@@ -24,15 +21,13 @@ body div#content pre
   background-color : #F8F8FF;
 }
 
-body div#content pre code 
-{
+body div#content pre code {
   padding          : 5px;
   background-color : #F8F8FF;
   border           : none;
 }
 
-body div#content code 
-{
+body div#content code {
   font-family      : courier, fixed;
   display          : inline-block;
   padding          : 0px 2px 0px 2px;
