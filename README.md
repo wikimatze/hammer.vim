@@ -1,13 +1,14 @@
 ## OVERVIEW
 
-| Project         | Hammer.vim
-|:----------------|:--------------------------------------------------
-| Homepage        | https://github.com/robgleeson/hammer.vim
-| Author          | Rob Gleeson
+| Project            | Hammer.vim
+|:-------------------|:--------------------------------------------------
+| Homepage           | https://github.com/matthias-guenther/hammer.vim
+| Author             | Matthias Guenther
+| Form-Author        | Rob Gleeson
+
 
 
 ## DESCRITPION
-
 Hammer is a Vim plugin written (mostly) in Ruby.  It can be used to transform your markup language
 of choice to HTML, and open the transformed HTML in whatever your favorite browser is.
 
@@ -23,7 +24,6 @@ templates.
 
 
 ## SUPPORTED MARKUP
-
 - [.markdown](http://daringfireball.net/projects/markdown/) -- `gem install redcarpet`
 - [.textile](http://www.textism.com/tools/textile/) -- `gem install RedCloth`
 - [.rdoc](http://rdoc.sourceforge.net/)
@@ -40,13 +40,11 @@ templates.
 
 
 ## COMMANDS
-
 The `:Hammer` command will transform your content to HTML, and open your
 browser.
 
 
 ## CONFIG VARIABLES
-
 - g:HAMMER\_DIRECTORY
   The path where transformed HTML files are kept.
   Defaults to `/tmp` on UNIX, and `$TEMP` on Windows.
@@ -65,7 +63,6 @@ browser.
 
 
 ## INSTALL
-
 You may need to install other dependencies for your markup language (See Above)
 
     $ [sudo] gem install github-markup tilt
@@ -74,13 +71,11 @@ You may need to install other dependencies for your markup language (See Above)
 
 
 ## SCREENSHOTS
-
 - [POD]
 - [Markdown]
 
 
 ## RVM USERS
-
 If you use RVM, it may be the culprit of what appear to be random segmentation faults but they're
 not random and their cause is easily pin pointed.
 
@@ -99,15 +94,14 @@ unsets `$GEM_HOME` and `$GEM_PATH` before the launch of Vim:
 
 
 ## LICENSE
-
 See LICENSE.txt
 
 
 ## TODO
-
 - √ register the plugin on http://www.vim.org/index.php (see [http://www.vim.org/scripts/script.php?script_id=3962](http://www.vim.org/scripts/script.php?script_id=3962))
 - add a chapter of "Self-Promotion" chapter on the README
 - create the hammer.txt documentation in Vim, so that Users can use the :help command
 
 [POD]: http://d.pr/16YG
 [Markdown]: http://d.pr/GEuT
+
