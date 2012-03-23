@@ -2,7 +2,7 @@ html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-
 
 body{
 color:#444;
-font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+font-family: Helvetica, arial, freesans, clean, sans-serif;
 font-size:12px;
 line-height:1.5em;
 padding:1em;
