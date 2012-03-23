@@ -67,7 +67,8 @@ sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: b
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
-ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+ul, ol { margin: 1em 0; padding: 0 0 0 30px; }
+li { margin: 15px 0; }
 li p:last-child { margin:0 }
 dd { margin: 0 0 0 2em; }
 
