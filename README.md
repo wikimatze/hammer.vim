@@ -8,7 +8,7 @@
 
 
 
-## DESCRITPION
+## DESCRIPTION
 Hammer is a Vim plugin written (mostly) in Ruby.  It can be used to transform your markup language
 of choice to HTML, and open the transformed HTML in whatever your favorite browser is.
 
