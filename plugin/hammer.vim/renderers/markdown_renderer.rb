@@ -7,6 +7,6 @@ markup :redcarpet, /md|mkd|markdown|mdwn/ do |content|
   renderer = Redcarpet::Markdown.new Hammer::MarkdownRenderer.new,
                                      :tables => true,
                                      :fenced_code_blocks => true,
-                                     :auto_linl => true
+                                     :autolink => true
   renderer.render(content)
 end
