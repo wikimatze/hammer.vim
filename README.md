@@ -66,7 +66,7 @@ browser.
 You may need to install other dependencies for your markup language (See Above)
 
     $ [sudo] gem install github-markup tilt
-    $ git clone git://github.com/robgleeson/hammer.vim.git
+    $ git clone git://github.com/matthias-guenther/hammer.vim.git
     $ cp -R hammer.vim/plugin/* $HOME/.vim/plugin
 
 
