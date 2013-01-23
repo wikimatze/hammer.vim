@@ -22,6 +22,10 @@ module Hammer::ENV
       @browser_args = Vim.evaluate 'g:HAMMER_BROWSER_ARGS'
     end
 
+    def catcmd
+      @catcmd = Vim.evaluate 'g:HAMMER_CAT'
+    end
+
     def commands_path
       @commands_path ||= File.join(install_path, "commands")
     end
