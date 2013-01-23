@@ -1,1 +1,1 @@
-command Hammer::ENV.browser, /html|xhtml/
+command Hammer::ENV.catcmd, /html|xhtml/
