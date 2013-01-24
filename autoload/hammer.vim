@@ -24,6 +24,19 @@ if has('ruby')
     end
   endif
 
+  if !exists('g:HAMMER_CAT')
+    if has('mac')
+      let g:HAMMER_CAT = 'cat'
+    elseif has('win32') || has('win64')
+      let g:HAMMER_CAT = 'type'
+  elseif has('unix') && executable('cat')
+      let g:HAMMER_CAT = 'cat'
+    else
+      let g:HAMMER_CAT = ''
+    end
+  endif
+
+
   if !exists('g:HAMMER_BROWSER_ARGS')
     let g:HAMMER_BROWSER_ARGS = ''
   endif
