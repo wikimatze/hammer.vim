@@ -105,7 +105,10 @@ module Hammer
         return nil
       end
 
-      unless GitHub::Markup.can_render?(buffer.basename)
+      has_tohtml = if Vim.evaluate('!&cp && exists(":TOhtml") && has("user_commands")') == 1 then true else nil end
+      cleanup = nil
+
+      unless GitHub::Markup.can_render?(buffer.basename) || has_tohtml
         msg = "Cannot render '#{buffer.extname}' files. Missing renderer?"
         Vim.message(msg)
         return nil
@@ -116,10 +119,20 @@ module Hammer
       File.open path, 'w' do |f|
         tilt = Tilt.new(Hammer::ENV.template)
         output = tilt.render do
-          GitHub::Markup.render(buffer.basename, buffer[1..-1])
+          if ! GitHub::Markup.can_render?(buffer.basename) && has_tohtml
+              Vim.command 'TOhtml'
+              tohtml_buffer = Vim::Buffer.current.extend Vim::ImprovedBuffer
+              cleanup = if tohtml_buffer != buffer then true else nil end
+              GitHub::Markup.render(tohtml_buffer.basename, tohtml_buffer[1..-1])
+
+          else
+              GitHub::Markup.render(buffer.basename, buffer[1..-1])
+          end
         end
 
         f.write(output)
+        
+        Vim.command 'bdelete!' if cleanup
       end
 
       Hammer.open_browser path
