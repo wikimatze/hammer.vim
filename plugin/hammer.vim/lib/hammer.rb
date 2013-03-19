@@ -100,7 +100,7 @@ module Hammer
     #
     def render! buffer
       unless dependencies_met?
-        msg = "Hammer is missing dependenices: #{missing_dependencies.join(', ')}"
+        msg = "Hammer is missing dependencies: #{missing_dependencies.join(', ')}"
         Vim.message(msg)
         return nil
       end
