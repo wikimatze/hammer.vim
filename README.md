@@ -82,6 +82,17 @@ The solution proposed by Wayne Seguin (author of RVM) is to define 'vim' as a sh
     {
       (unset GEM_PATH GEM_HOME; command mvim "$@")
     }
+    
+## rbenv users
+
+Even if you have set a global ruby, Vim will use your system ruby, so make sure you install the gems above under this
+path. You can switch to the system Ruby with:
+
+    $ rbenv shell system
+    
+Then, run:
+
+    $ [sudo] gem install github-markup tilt
 
 
 ## License
