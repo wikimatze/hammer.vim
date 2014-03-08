@@ -1,5 +1,4 @@
 module Vim
-
   module ImprovedBuffer
 
     #
@@ -34,7 +33,5 @@ module Vim
     def saved?
       File.exist? self.name.to_s
     end
-
   end
-
 end

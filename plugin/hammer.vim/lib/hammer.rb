@@ -1,5 +1,4 @@
 module Hammer
-
   class << self
 
     #
@@ -131,13 +130,11 @@ module Hammer
         end
 
         f.write(output)
-        
+
         Vim.command 'bdelete!' if cleanup
       end
 
       Hammer.open_browser path
     end
-
   end
-
 end

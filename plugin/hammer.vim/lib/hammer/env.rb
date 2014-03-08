@@ -1,20 +1,19 @@
 module Hammer::ENV
-
   class << self
     def [] key
       self.send key
     end
 
     def template
-      filename  = Vim.evaluate('g:HAMMER_TEMPLATE') + '.html.erb' 
-      @template = File.join(template_path, filename) 
+      filename  = Vim.evaluate('g:HAMMER_TEMPLATE') + '.html.erb'
+      @template = File.join(template_path, filename)
     end
 
     def directory
       @directory = Vim.evaluate 'g:HAMMER_DIRECTORY'
     end
 
-    def browser 
+    def browser
       @browser = Vim.evaluate 'g:HAMMER_BROWSER'
     end
 
@@ -54,5 +53,4 @@ module Hammer::ENV
       Vim.evaluate('g:HAMMER_SILENCE_WARNINGS') == 1
     end
   end
-
 end

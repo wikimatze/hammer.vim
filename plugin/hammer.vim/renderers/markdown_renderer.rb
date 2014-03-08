@@ -1,6 +1,6 @@
 markup :redcarpet, /md|mkd|markdown|mdwn/ do |content|
   require 'redcarpet'
-  
+
   class Hammer::MarkdownRenderer < Redcarpet::Render::HTML
   end
 
